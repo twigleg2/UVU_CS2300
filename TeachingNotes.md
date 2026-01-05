@@ -60,7 +60,7 @@ $$
 $$
 \begin{array}{|cc|c|}
 \hline
-P & Q & P \rightarrow Q \\
+p & q & p \rightarrow q \\
 \hline
 T & T & T \\
 T & F & F \\
@@ -93,6 +93,24 @@ $$
 - Note: If there are more than one _Conditional_ and/or _Biconditional_ statements, they are applied in right-to-left order, which is often unintuitive.  It's best practice to use parenthesis to be explicit about the order in which operations should be performed.
 
 ## Lecture 3, Sections 1.4 - 1.5
+
+### Tautalogy
+- A compound proposition that is always true, no matter what.
+- ex. $p \lor \neg p$
+
+### Contradiction
+- A compound proposition is a contradiction if it is always false, no matter what
+- ex. $p \land \neg p$
+
+### De Morgan's Law
+- Negation of Conjunction
+  - $\neg(p \land q) \equiv \neg p \lor \neg q$
+- Negation of Disjunction
+  - $\neg (p \lor q) \equiv \neg p \land \neg q$
+- **Practice**: Draw the truth tables to show they are logically equivalent
+
+### Other laws of propositional logic
+- See Zybooks table 1.5.1
 
 
 ## Lecture 4, Sections 1.6 - 1.8
