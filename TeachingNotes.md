@@ -3,13 +3,12 @@
 ## Lecture 2, Sections 1.1 - 1.3
 
 ### Proposition
-
 - A statement that is either true or false
 - often denoted with variables $p$, $q$, $r$
 - compound propositions can be made by combining propositions with logical operators
 
-### Logical operators
 
+### Logical operators
 - $\neg$ : Negation, Not
 - $\land$ : Conjunction, And
 - $\lor$ : Disjunction, (inclusive) Or
@@ -17,16 +16,16 @@
   - **Note**: The _Exclusive Or_ can be written as a combination of the other three operators, and therefore is not often written down in discrete mathematics.
   - **Practice**: How does the English language handle the difference between the _Inclusive Or_ and _Exclusive Or_?
 
-#### Order of operations
 
+#### Order of operations
 1. $\neg$ , NOT
 2. $\land$ , AND
 3. $\lor$ , OR
    - Use parenthesis to change the order of operations, just like you would in algebra.
    - **Practice**: Why is the _Exclusive Or_ not in this list?
 
-### Truth tables
 
+### Truth tables
 - We often use truth tables to visually solve compound propositions
 - The number of rows in a truth table is equal to $2^n$, where $n$ is the number of variables
 - Example truth table:
@@ -47,15 +46,15 @@ $$
 - **Practice**: Make a truth table with three variables
 - **Practice**: Make a truth table with columns for the intermediate calculations of a complex compound proposition
 
-### Short circuiting a compound proposition
 
+### Short circuiting a compound proposition
 - Sometimes there is no need calculate all parts of a compound proposition.  When this happens, we call it a short-circuit.
 - Example: $p \land (q \lor r \lor \neg t)$
   - If $p$ is false, we do not need to calculate the rest of the equation because the statement will be false regardless.
   - **practice**: Can you show a similar example that short-circuits on the $\lor$ operator?
 
-### Conditional statements
 
+### Conditional statements
 - $p \to q$ : Conditional, Implication
   - Read: "if $p$ then $q$", "$p$ implies $q$", "$p$ only if $q$"
   - Check out table 1.3.2 in Zybooks for other ways you can express a conditional statement in English
@@ -79,43 +78,26 @@ F & F & T \\
 \end{array}
 $$
 
-$$
-\begin{matrix}
-p & q & p \land q \\
-T & T & T \\
-T & F & F \\
-F & T & F \\
-F & F & F
-\end{matrix}
-$$
-
-| $p$ | $q$ | $p \land q$ |
-| --- | --- | --- |
-| $T$ | $T$ | $T$ |
-| $T$ | $F$ | $F$ |
-| $F$ | $T$ | $F$ |
-| $F$ | $F$ | $F$ |
-
 - $p \to q$ is logically equivalent to $\neg p \lor q$
   - **Practice**: Draw the truth table for both of these to prove it to yourself
 
-#### Related statements
 
+#### Related statements
 - Inverse: $\neg p \to \neg q$
 - Converse: $q \to p$
 - Contrapositive: $\neg q \to \neg p$
   - The _Contrapositive_ is logically equivalent to the original conditional statement.  The _Inverse_ and _Converse_ are not, but they are logically equivalent to each other.
 
-### Biconditional statement
 
+### Biconditional statement
 - $p \leftrightarrow q$ : Biconditional, equivalence
   - Read: "$p$ if and only if $q$", "$p$ is equivalent to $q$"
     - "If and only if" is often abbreviated as "iff"
 - $p \leftrightarrow q$ is logically equivalent to $(p \to q)\land(q \to p)$
   - In other words, $p$ and $q$ must have the same value, or the statement is false
 
-### Order of operations with Conditional and Biconditional statements
 
+#### Order of operations with Conditional and Biconditional statements
 1. $\neg$ , NOT
 2. $\land$ , AND
 3. $\lor$ , OR
@@ -123,30 +105,71 @@ $$
 
 - Note: If there are more than one _Conditional_ and/or _Biconditional_ statements, they are applied in right-to-left order, which is often unintuitive.  It's best practice to use parenthesis to be explicit about the order in which operations should be performed.
 
+
 ## Lecture 3, Sections 1.4 - 1.5
 
-### Tautalogy
-
+### Tautology
 - A compound proposition that is always true, no matter what.
 - ex. $p \lor \neg p$
 
-### Contradiction
 
-- A compound proposition is a contradiction if it is always false, no matter what
-- ex. $p \land \neg p$
+### Contradiction
+- A compound proposition that is always false, no matter what
+  - ex. $p \land \neg p$
+
+
+### Contingent
+- A compound proposition that could be either true or false
+  - **practice**: Are the following a _Tautology_, a _Contradiction_, or _Contingent_?
+  - $p \leftrightarrow \neg p$
+  - $p \to p$
+  - $\neg p \to \neg p$
+  - $p \to \neg p$
+  - $(p \land q) \to p$
+
+
+### Logical equivalence
+- $\equiv$ 
+- This symbol inserted in between two statements denotes that those two statements are logically equivalent.
+- Two statements that are logically equivalent may be used to substitute for each other in a complex compound proposition
+  - When doing a substitution, always use parenthesis to avoid errors with the order of operations
+- To demonstrate logical equivalence, build a truth table and compare the columns for each statement
+- **Practice**: Look at the exercises at the bottom of section 1.4 in Zybooks.
+- **Practice**: Ask an AI chat bot to generate two (complex) compound propositions.  Then determine if they are or are not logically equivalent by drawing a truth table.
+
 
 ### De Morgan's Law
-
 - Negation of Conjunction
   - $\neg(p \land q) \equiv \neg p \lor \neg q$
 - Negation of Disjunction
   - $\neg (p \lor q) \equiv \neg p \land \neg q$
 - **Practice**: Draw the truth tables to show they are logically equivalent
 
+
 ### Other laws of propositional logic
 
-- See Zybooks table 1.5.1
+| Law | | |
+| --- | --- | --- |
+| Double negation | $\neg \neg p \equiv p$ | |
+| Complement | $\neg F \equiv T$ | $\neg T \equiv F$ |
 
+| Law | $\lor$ version | $\land$ version |
+| --- | --- | --- |
+| Complement (cont.) | $p \lor \neg p \equiv T$ | $p \land \neg p \equiv F$ |
+| Identity | $p \lor F \equiv p$ | $p \land T \equiv p$ |
+| Domination | $p \lor T \equiv T$ | $p \land F \equiv F$ |
+| Idempotent | $p \lor p \equiv p$ | $p \land p \equiv p$ |
+| Commutative | $p \lor q \equiv q \lor p$ | $p \land q \equiv q \land p$ |
+| Associative | $p \lor (q \lor r) \equiv (p \lor q) \lor r$ | $p \land (q \land r) \equiv (p \land q) \land r$ |
+| Distributive | $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ | $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$ |
+| De Morgan's | $\neg (p \lor q) \equiv \neg p \land \neg q$ | $\neg(p \land q) \equiv \neg p \lor \neg q$ |
+| Absorption | $p \lor (p \land q) \equiv p$ | $p \land (p \lor q) \equiv p$ |
+
+| | | |
+| --- | --- | --- |
+| Conditional Identities | $p \to q \equiv \neg p \lor q$ | $p \leftrightarrow q \equiv (p \to q) ^ (q \to p)$ |
+
+- **Practice**: Prove the absorption laws, then do some exercises from section 1.5
 
 ## Lecture 4, Sections 1.6 - 1.8
 
