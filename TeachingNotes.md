@@ -2,12 +2,14 @@
 
 ## Lecture 2, Sections 1.1 - 1.3
 
-### Proposition 
+### Proposition
+
 - A statement that is either true or false
 - often denoted with variables $p$, $q$, $r$
 - compound propositions can be made by combining propositions with logical operators
 
 ### Logical operators
+
 - $\neg$ : Negation, Not
 - $\land$ : Conjunction, And
 - $\lor$ : Disjunction, (inclusive) Or
@@ -16,6 +18,7 @@
   - **Practice**: How does the English language handle the difference between the _Inclusive Or_ and _Exclusive Or_?
 
 #### Order of operations
+
 1. $\neg$ , NOT
 2. $\land$ , AND
 3. $\lor$ , OR
@@ -23,9 +26,11 @@
    - **Practice**: Why is the _Exclusive Or_ not in this list?
 
 ### Truth tables
+
 - We often use truth tables to visually solve compound propositions
 - The number of rows in a truth table is equal to $2^n$, where $n$ is the number of variables
 - Example truth table:
+
 $$
 \begin{array}{|c c|c|}
 \hline
@@ -38,16 +43,19 @@ F & F & F \\
 \hline
 \end{array}
 $$
+
 - **Practice**: Make a truth table with three variables
 - **Practice**: Make a truth table with columns for the intermediate calculations of a complex compound proposition
 
 ### Short circuiting a compound proposition
+
 - Sometimes there is no need calculate all parts of a compound proposition.  When this happens, we call it a short-circuit.
 - Example: $p \land (q \lor r \lor \neg t)$
   - If $p$ is false, we do not need to calculate the rest of the equation because the statement will be false regardless.
   - **practice**: Can you show a similar example that short-circuits on the $\lor$ operator?
 
 ### Conditional statements
+
 - $p \to q$ : Conditional, Implication
   - Read: "if $p$ then $q$", "$p$ implies $q$", "$p$ only if $q$"
   - Check out table 1.3.2 in Zybooks for other ways you can express a conditional statement in English
@@ -57,6 +65,7 @@ $$
   - ex. If you don't turn in your homework on time, then you will not score 100% on that assignment.
   - Turning in your homework on time does not guarantee you will score 100%.  There are many other ways to not score 100%, and so your score being less than 100% says nothing about when you turned it in.
   - **Practice**: Apply the same logic to the statement "If I get stuck in traffic, then I will be late for class"
+
 $$
 \begin{array}{|cc|c|}
 \hline
@@ -69,40 +78,65 @@ F & F & T \\
 \hline
 \end{array}
 $$
+
+$$
+\begin{matrix}
+p & q & p \land q \\
+T & T & T \\
+T & F & F \\
+F & T & F \\
+F & F & F
+\end{matrix}
+$$
+
+| $p$ | $q$ | $p \land q$ |
+| --- | --- | --- |
+| $T$ | $T$ | $T$ |
+| $T$ | $F$ | $F$ |
+| $F$ | $T$ | $F$ |
+| $F$ | $F$ | $F$ |
+
 - $p \to q$ is logically equivalent to $\neg p \lor q$
   - **Practice**: Draw the truth table for both of these to prove it to yourself
 
 #### Related statements
+
 - Inverse: $\neg p \to \neg q$
 - Converse: $q \to p$
 - Contrapositive: $\neg q \to \neg p$
   - The _Contrapositive_ is logically equivalent to the original conditional statement.  The _Inverse_ and _Converse_ are not, but they are logically equivalent to each other.
 
 ### Biconditional statement
+
 - $p \leftrightarrow q$ : Biconditional, equivalence
-  - Read: "$p$ if and only if $q$", "$p$ is equivalent to $q$
+  - Read: "$p$ if and only if $q$", "$p$ is equivalent to $q$"
     - "If and only if" is often abbreviated as "iff"
 - $p \leftrightarrow q$ is logically equivalent to $(p \to q)\land(q \to p)$
   - In other words, $p$ and $q$ must have the same value, or the statement is false
 
 ### Order of operations with Conditional and Biconditional statements
+
 1. $\neg$ , NOT
 2. $\land$ , AND
 3. $\lor$ , OR
 4. $\to$ Conditional  ; $\leftrightarrow$ Biconditional
+
 - Note: If there are more than one _Conditional_ and/or _Biconditional_ statements, they are applied in right-to-left order, which is often unintuitive.  It's best practice to use parenthesis to be explicit about the order in which operations should be performed.
 
 ## Lecture 3, Sections 1.4 - 1.5
 
 ### Tautalogy
+
 - A compound proposition that is always true, no matter what.
 - ex. $p \lor \neg p$
 
 ### Contradiction
+
 - A compound proposition is a contradiction if it is always false, no matter what
 - ex. $p \land \neg p$
 
 ### De Morgan's Law
+
 - Negation of Conjunction
   - $\neg(p \land q) \equiv \neg p \lor \neg q$
 - Negation of Disjunction
@@ -110,6 +144,7 @@ $$
 - **Practice**: Draw the truth tables to show they are logically equivalent
 
 ### Other laws of propositional logic
+
 - See Zybooks table 1.5.1
 
 
