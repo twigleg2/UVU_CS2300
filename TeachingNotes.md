@@ -165,9 +165,10 @@ $$
 | De Morgan's | $\neg (p \lor q) \equiv \neg p \land \neg q$ | $\neg(p \land q) \equiv \neg p \lor \neg q$ |
 | Absorption | $p \lor (p \land q) \equiv p$ | $p \land (p \lor q) \equiv p$ |
 
-| | | |
-| --- | --- | --- |
-| Conditional Identities | $p \to q \equiv \neg p \lor q$ | $p \leftrightarrow q \equiv (p \to q) ^ (q \to p)$ |
+| Conditional Identities |
+| --- |
+| $p \to q \equiv \neg p \lor q$ |
+| $p \leftrightarrow q \equiv (p \to q) \land (q \to p)$ |
 
 - **Practice**: Prove the absorption laws, then do some exercises from section 1.5
 
