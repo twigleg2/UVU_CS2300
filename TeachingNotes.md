@@ -183,7 +183,7 @@ $$
     - $x$ is positive
   - $P(x,y) : x = y$
     - $x$ is equal to $y$
-- A predicate turns into a proposition after all of it's variables are assigned a value
+- A predicate turns into a proposition after all of it's variables are assigned a value.
   - $P(5) : x \bmod 2 = 0$  
     - 5 is even, which is a false proposition
 
@@ -218,14 +218,6 @@ $$
     - $P(x)$ : $x$ studies
     - $Q(x)$ : $x$ passes the exam
     - All students who study pass the exam
-- We can also combine universal and existential quantifiers
-  - Example: $\forall x \exists y$
-    - $x$ is a student in the class
-    - $y$ is a desk in the classroom
-    - for each student in the class, there exists a desk in the classroom.  That is to say, each student gets their own desk.
-  - Note that swapping the order of the quantifiers changes the meaning
-  - Example: $\exists y \forall x$
-    - There exists a desk for all students in the class.  That is to say, all students share the one desk.
 
 ### De Morgan's law for quantified statements
 - Negation of universally quantified statements:
@@ -236,6 +228,23 @@ $$
 
 ## Lecture 5, Sections 1.9 - 1.10
 
+### Nested Quantifiers
+- We can combine universal and/or existential quantifiers
+  - Example: $\forall x \exists y P(x,y)$
+    - $x$ is a student in the class
+    - $y$ is a desk in the classroom
+    - $P(x,y)$ : $x$ sits at $y$
+    - For all students in the class, there exists a desk in the classroom to sit at.  That is to say, each student sits at their own desk.
+  - Note that swapping the order of two different quantifiers changes the meaning (adjacent quantifiers of the same type can be swapped without consequence).
+  - Example: $\exists y \forall x P(x,y)$
+    - There exists a desk in the classroom for all students in the class to sit at.  That is to say, all students sit at the same desk.
+
+### De Morgan's law for nested quantified statements
+- Every time the negation passes by a quantifier, change it's type
+  - $\neg \forall x \exists y \exists z P(x,y,z) \equiv$
+  - $\exists x \neg \exists y \exists z P(x,y,z) \equiv$
+  - $\exists x \forall y \neg \exists z P(x,y,z) \equiv$
+  - $\exists x \forall y \forall z \neg P(x,y,z)$
 
 ## Lecture 6, Sections 2.1 - 2.3
 
