@@ -56,7 +56,9 @@ $$
 
 ### Conditional statements
 - $p \to q$ : Conditional, Implication
-  - Read: "if $p$ then $q$", "$p$ implies $q$", "$p$ only if $q$"
+  - if $p$ then $q$
+  - $p$ implies $q$
+  - $p$ only if $q$
   - Check out table 1.3.2 in Zybooks for other ways you can express a conditional statement in English
 - $p$ is called the hypothesis, $q$ is called the conclusion
 - The statement $p \to q$ resolves to false only when the hypothesis $p$ is true and the conclusion $q$ is false.
@@ -91,7 +93,8 @@ $$
 
 ### Biconditional statement
 - $p \leftrightarrow q$ : Biconditional, equivalence
-  - Read: "$p$ if and only if $q$", "$p$ is equivalent to $q$"
+  - $p$ is equivalent to $q$
+  - $p$ if and only if $q$
     - "If and only if" is often abbreviated as "iff"
 - $p \leftrightarrow q$ is logically equivalent to $(p \to q)\land(q \to p)$
   - In other words, $p$ and $q$ must have the same value, or the statement is false
@@ -110,7 +113,7 @@ $$
 
 ### Tautology
 - A compound proposition that is always true, no matter what.
-- ex. $p \lor \neg p$
+  - ex. $p \lor \neg p$
 
 
 ### Contradiction
@@ -129,7 +132,7 @@ $$
 
 
 ### Logical equivalence
-- $\equiv$ 
+- $\equiv$
 - This symbol inserted in between two statements denotes that those two statements are logically equivalent.
 - Two statements that are logically equivalent may be used to substitute for each other in a complex compound proposition
   - When doing a substitution, always use parenthesis to avoid errors with the order of operations
@@ -173,6 +176,62 @@ $$
 - **Practice**: Prove the absorption laws, then do some exercises from section 1.5
 
 ## Lecture 4, Sections 1.6 - 1.8
+
+### Predicate
+- A logical statement with a truth value that is a function (of one or more variables).  That is to say, the truth value of the statement is dependent on the value of the variables ($x$, $y$, etc.).
+  - $P(x) : x > 0$
+    - $x$ is positive
+  - $P(x,y) : x = y$
+    - $x$ is equal to $y$
+- A predicate turns into a proposition after all of it's variables are assigned a value
+  - $P(5) : x \bmod 2 = 0$  
+    - 5 is even, which is a false proposition
+
+### Quantified Statements
+- We can also turn a predicate into a proposition by considering all possible values (of x, y, etc.).
+- When evaluating a _quantified statement_, we must first chose a **domain**, or a set of possible values, to test against.  
+  - example domains:
+    - positive numbers
+    - rational numbers
+    - students in the class
+
+#### Universally Quantified Statement
+- $\forall$ : Universal Quantifier
+- $\forall x P(x)$
+  - For all $x$, $P(x)$
+- A _universally quantified statement_ is false if there exists one or more _Counterexamples_.
+- A **Counterexample** is one value from the domain that proves the _universally quantified statement_ false.
+  - If the domain is empty, the _universally quantified statement_ is true, because there does not exist a counterexample.
+
+#### Existentially Quantified Statement
+- $\exists$ : Existential Quantifier
+- $\exists x P(x)$
+  - there exists an $x$, such that $P(x)$
+- An _existentially quantified statement_ is true if there exists one or more _Examples_.
+- An **example** is one value from the domain that proves the _existentially quantified statement_ true.
+  - If the domain is empty, the _existentially quantified statement_ is false, because an _example_ does not exist.
+
+### Compound Quantified Statements
+- We can combine quantified statements with logical operators to create compound quantified statements
+  - Example: $\forall x(P(x) \land Q(x))$
+    - $x$ is a student
+    - $P(x)$ : $x$ studies
+    - $Q(x)$ : $x$ passes the exam
+    - All students who study pass the exam
+- We can also combine universal and existential quantifiers
+  - Example: $\forall x \exists y$
+    - $x$ is a student in the class
+    - $y$ is a desk in the classroom
+    - for each student in the class, there exists a desk in the classroom.  That is to say, each student gets their own desk.
+  - Note that swapping the order of the quantifiers changes the meaning
+  - Example: $\exists y \forall x$
+    - There exists a desk for all students in the class.  That is to say, all students share the one desk.
+
+### De Morgan's law for quantified statements
+- Negation of universally quantified statements:
+  - $\neg \forall x P(x) \equiv \exists x \neg P(x)$
+- Negation of existentially quantified statements:
+  - $\neg \exists x P(x) \equiv \forall x \neg P(x)$
 
 
 ## Lecture 5, Sections 1.9 - 1.10
