@@ -175,6 +175,7 @@ $$
 
 - **Practice**: Prove the absorption laws, then do some exercises from section 1.5
 
+
 ## Lecture 4, Sections 1.6 - 1.8
 
 ### Predicate
@@ -187,6 +188,7 @@ $$
   - $P(5) : x \bmod 2 = 0$  
     - 5 is even, which is a false proposition
 
+
 ### Quantified Statements
 - We can also turn a predicate into a proposition by considering all possible values (of x, y, etc.).
 - When evaluating a _quantified statement_, we must first chose a **domain**, or a set of possible values, to test against.  
@@ -195,21 +197,28 @@ $$
     - rational numbers
     - students in the class
 
+
 #### Universally Quantified Statement
 - $\forall$ : Universal Quantifier
 - $\forall x P(x)$
   - For all $x$, $P(x)$
+- For a domain of size $n$, this is equivalent to:
+  - $P(x_1) \land P(x_2) \land ... \land P(x_n)$
 - A _universally quantified statement_ is false if there exists one or more _Counterexamples_.
 - A **Counterexample** is one value from the domain that proves the _universally quantified statement_ false.
   - If the domain is empty, the _universally quantified statement_ is true, because there does not exist a counterexample.
+
 
 #### Existentially Quantified Statement
 - $\exists$ : Existential Quantifier
 - $\exists x P(x)$
   - there exists an $x$, such that $P(x)$
+- For a domain of size $n$, this is equivalent to:
+  - $P(x_1) \lor P(x_2) \lor ... \lor P(x_n)$
 - An _existentially quantified statement_ is true if there exists one or more _Examples_.
 - An **example** is one value from the domain that proves the _existentially quantified statement_ true.
   - If the domain is empty, the _existentially quantified statement_ is false, because an _example_ does not exist.
+
 
 ### Compound Quantified Statements
 - We can combine quantified statements with logical operators to create compound quantified statements
@@ -218,6 +227,7 @@ $$
     - $P(x)$ : $x$ studies
     - $Q(x)$ : $x$ passes the exam
     - All students who study pass the exam
+
 
 ### De Morgan's law for quantified statements
 - Negation of universally quantified statements:
@@ -229,15 +239,19 @@ $$
 ## Lecture 5, Sections 1.9 - 1.10
 
 ### Nested Quantifiers
-- We can combine universal and/or existential quantifiers
-  - Example: $\forall x \exists y P(x,y)$
-    - $x$ is a student in the class
-    - $y$ is a desk in the classroom
-    - $P(x,y)$ : $x$ sits at $y$
-    - For all students in the class, there exists a desk in the classroom to sit at.  That is to say, each student sits at their own desk.
-  - Note that swapping the order of two different quantifiers changes the meaning (adjacent quantifiers of the same type can be swapped without consequence).
-  - Example: $\exists y \forall x P(x,y)$
-    - There exists a desk in the classroom for all students in the class to sit at.  That is to say, all students sit at the same desk.
+We can combine universal and/or existential quantifiers  
+
+- $\forall x \exists y P(x,y)$
+  - $x$ is a student in the class
+  - $y$ is a desk in the classroom
+  - $P(x,y)$ : $x$ sits at $y$
+  - For all students in the class, there exists a desk in the classroom to sit at.  That is to say, each student sits at their own desk.
+
+Note that swapping the order of two different quantifiers changes the meaning (adjacent quantifiers of the same type can be swapped without consequence).  
+
+- $\exists y \forall x P(x,y)$
+  - There exists a desk in the classroom for all students in the class to sit at.  That is to say, all students sit at the same desk.
+
 
 ### De Morgan's law for nested quantified statements
 - Every time the negation passes by a quantifier, change it's type
@@ -245,6 +259,50 @@ $$
   - $\exists x \neg \exists y \exists z P(x,y,z) \equiv$
   - $\exists x \forall y \neg \exists z P(x,y,z) \equiv$
   - $\exists x \forall y \forall z \neg P(x,y,z)$
+
+
+### Expressing "everyone else"
+Imagine the following scenario:
+- $\forall x \forall y P(x,y)$
+- "Every team member gave a high-five to everyone"
+  - Note that the domain for $x$ and $y$ is the same.  That is, we only have a single team of people.
+
+As it stands now, this statement means that everyone also gave a high-five to themselves, which is probably not what we intended.
+We Probably meant to say "Every team member gave a high-five to everyone else" or "Every team member gave a high-five to every other team member.
+We can modify our statement in two ways to get closer to our intent:
+- $\forall x \forall y (x \neq y \to P(x,y))$
+  - In this case, each team member may or may not have given themselves a high five; we don't care either way.
+- $\forall x \forall y (x \neq y \land P(x,y))$
+  - In this case, each team member definitely did not give themselves a high five.
+
+
+### Expressing "uniqueness"
+How would you express the following in a logical statement?
+
+- Only one student skipped class
+
+We can't simply write $\exists x P(x)$, because this wold mean that one _or more_ students skipped class.  To check for uniqueness, we have to modify our statement:
+
+- $\exists x (P(x) \land \forall y (x \neq y \to \neg P(x)))$
+
+**Practice**: Break this down into parts to demonstrate why this works
+
+
+### Quantifier Distribution
+Remember that the universal quantifier $\forall$ acts like a long sting of conjunction $\land$ operations, and the existential quantifier $\exists$ acts like a long sting of disjunction $\lor$ operations.  Because of this, the universal quantifier can be distributed over conjunctions $\land$ and the existential quantifier can be distributed over disjunctions $\lor$.
+
+Examples:
+- $\forall x (P(x) \land Q(x)) \equiv \forall x P(x) \land \forall x Q(x)$
+- $\exists x (P(x) \lor Q(x)) \equiv \exists x P(x) \lor \exists x Q(x)$
+
+
+### Scope shifting
+If a statement (conjunction or disjunction) does not contain a variable bound by a quantifier, it can be pulled into or out of that quantifier
+
+Examples:
+- $\forall x (\exists y Q(y)\land P(x)) \equiv \forall x \exists y (P(x) \land Q(y))$
+
+This can also be done with the implication $\to$, but be careful you do it correctly!  Convert it to the form $\neg p \lor q$ using the conditional identify first to make sure you don't make a mistake.  For most, this is very unintuitive and easy to mess up.
 
 ## Lecture 6, Sections 2.1 - 2.3
 
