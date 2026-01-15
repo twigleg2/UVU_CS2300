@@ -283,7 +283,7 @@ How would you express the following in a logical statement?
 
 We can't simply write $\exists x P(x)$, because this wold mean that one _or more_ students skipped class.  To check for uniqueness, we have to modify our statement:
 
-- $\exists x (P(x) \land \forall y (x \neq y \to \neg P(x)))$
+- $\exists x (P(x) \land \forall y (x \neq y \to \neg P(y)))$
 
 **Practice**: Break this down into parts to demonstrate why this works
 
