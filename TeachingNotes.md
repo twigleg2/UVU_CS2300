@@ -1,6 +1,11 @@
 # Lecture Notes for CS 2300 - Discrete Mathematics
 
-## Lecture 2, Sections 1.1 - 1.3
+## Lecture 1
+
+Read the syllabus
+
+## Lecture 2
+Sections 1.1 - 1.3
 
 ### Proposition
 - A statement that is either true or false
@@ -109,7 +114,8 @@ $$
 - Note: If there are more than one _Conditional_ and/or _Biconditional_ statements, they are applied in right-to-left order, which is often unintuitive.  It's best practice to use parenthesis to be explicit about the order in which operations should be performed.
 
 
-## Lecture 3, Sections 1.4 - 1.5
+## Lecture 3
+Sections 1.4 - 1.5
 
 ### Tautology
 - A compound proposition that is always true, no matter what.
@@ -176,7 +182,8 @@ $$
 - **Practice**: Prove the absorption laws, then do some exercises from section 1.5
 
 
-## Lecture 4, Sections 1.6 - 1.8
+## Lecture 4
+Sections 1.6 - 1.8
 
 ### Predicate
 - A logical statement with a truth value that is a function (of one or more variables).  That is to say, the truth value of the statement is dependent on the value of the variables ($x$, $y$, etc.).
@@ -236,7 +243,8 @@ $$
   - $\neg \exists x P(x) \equiv \forall x \neg P(x)$
 
 
-## Lecture 5, Sections 1.9 - 1.10
+## Lecture 5
+Sections 1.9 - 1.10
 
 ### Nested Quantifiers
 We can combine universal and/or existential quantifiers  
@@ -304,70 +312,93 @@ Examples:
 
 This can also be done with the implication $\to$, but be careful you do it correctly!  Convert it to the form $\neg p \lor q$ using the conditional identify first to make sure you don't make a mistake.  For most, this is very unintuitive and easy to mess up.
 
-## Lecture 6, Sections 2.1 - 2.3
+## Lecture 6
+Sections 2.1 - 2.3
 
 
-## Lecture 7, Sections 2.4 - 2.6
+## Lecture 7
+Sections 2.4 - 2.6
 
 
-## Lecture 8, Sections 2.7 - 2.10
+## Lecture 8
+Sections 2.7 - 2.10
 
 
-## Lecture 9, Midterm 1 Review
+## Lecture 9
+Midterm 1 Review
 
 
-## Lecture 10, Sections 3.1 - 3.4
+## Lecture 10
+Sections 3.1 - 3.4
 
 
-## Lecture 11, Sections 3.5 - 3.7
+## Lecture 11
+Sections 3.5 - 3.7
 
 
-## Lecture 12, Sections 4.1 - 4.3
+## Lecture 12
+Sections 4.1 - 4.3
 
 
-## Lecture 13, Sections 4.4 - 4.6
+## Lecture 13
+Sections 4.4 - 4.6
 
 
-## Lecture 14, Sections 5.1 - 5.3
+## Lecture 14
+Sections 5.1 - 5.3
 
 
-## Lecture 15, Sections 5.4 - 5.6
+## Lecture 15
+Sections 5.4 - 5.6
 
 
-## Lecture 16, Sections 5.7 - 5.9
+## Lecture 16
+Sections 5.7 - 5.9
 
 
-## Lecture 17, Sections 6.1 - 6.5
+## Lecture 17
+Sections 6.1 - 6.5
 
 
-## Lecture 18, Sections 7.1 - 7.5
+## Lecture 18
+Sections 7.1 - 7.5
 
 
-## Lecture 19, Midterm 2 Review
+## Lecture 19
+Midterm 2 Review
 
 
-## Lecture 20, Sections 8.1 - 8.3
+## Lecture 20
+Sections 8.1 - 8.3
 
 
-## Lecture 21, Sections 8.4 - 8.6
+## Lecture 21
+Sections 8.4 - 8.6
 
 
-## Lecture 22, Sections 8.8 - 8.9
+## Lecture 22
+Sections 8.8 - 8.9
 
 
-## Lecture 23, Sections 8.10 - 8.11
+## Lecture 23
+Sections 8.10 - 8.11
 
 
-## Lecture 24, Sections 9.1 - 9.4
+## Lecture 24
+Sections 9.1 - 9.4
 
 
-## Lecture 25, Sections 9.5 - 9.8
+## Lecture 25
+Sections 9.5 - 9.8
 
 
-## Lecture 26, Sections 9.9 - 9.12
+## Lecture 26
+Sections 9.9 - 9.12
 
 
-## Lecture 27, Sections 9.13 - 9.15
+## Lecture 27
+Sections 9.13 - 9.15
 
 
-## Lecture 28, Final Exam Review
+## Lecture 28
+Final Exam Review
