@@ -316,10 +316,8 @@ This can also be done with the implication $\to$, but be careful you do it corre
 Sections 2.1 - 2.3
 
 ### Arguments
-- $\therefore$ This symbol means "therefore"
 
-An argument takes the logical statements that we are familiar with and writes them in a new form.  The following are equivalent:
-
+An argument takes the logical statements that we are familiar with and writes them in a new form, with hypotheses (or **premises**) on top and the conclusion on the bottom.  
 
 $$
 \begin{aligned}
@@ -327,32 +325,38 @@ $$
 & p \\
 & \overline{\therefore q} \\
 \end{aligned}
-\space \space \equiv \space \space ((p \to q) \land p) \to q
 $$
 
-
-Remember that the left side of an implication is called the hypothesis and the right side of an implication is called the conclusion.  That means that in this new format, all statements above the line are hypotheses, and the statement below the line is the conclusion.  So in this example:
+- $\therefore$ This symbol means "therefore"
 - $p \to q$ is a hypothesis
 - $p$ is a hypothesis
 - $q$ is the conclusion
 
+Arguments can also be written in english:  
 
-Arguments can also be written in english:
+If I have completed my homework, then I will turn it in  
+I have completed my homework  
+$\therefore$ I will turn it in
 
-$$
-\begin{aligned}
-& \text{If I have completed my homework, then I will turn it in} \\
-& \text{I have completed my homework} \\
-& \overline{\therefore \text{I will turn it in}}
-\end{aligned}
-$$
 
-#### valid arguments
-An argument is valid if it is a tautology, and invalid otherwise.  
-To prove that an argument is invalid, you must find a situation where all hypotheses are true and the conclusion is false. (Remember that when the hypothesis is false, the statement is considered to be true because in that scenario we aren't testing the hypothesis).
+#### Valid Arguments
+We can show that an argument is valid or not by drawing a truth table.  To do this, we check all cases where all hypotheses are true:
+
+- If the conclusion is true in each case, the argument is valid.
+- If the conclusion is false in one or more cases, the argument is invalid.
+
+We can skip or ignore any case where one or more hypotheses are false, because validity assumes the hypotheses are true.
 
 #### Practice
 Are the following Valid or Invalid arguments? Use a truth table.
+
+$$
+\begin{aligned}
+& p \to q \\
+& p \\
+& \overline{\therefore q} \\
+\end{aligned}
+$$
 
 $$
 \begin{aligned}
@@ -369,6 +373,35 @@ $$
 & \overline{\therefore q \to p}
 \end{aligned}
 $$
+
+##### Footnote
+
+Arguments can be rewritten by conjoining the premises and implying the conclusion.  The first practice problem above can be rewritten as:
+- $((p \to q) \land p) \to q$
+
+If this statement is a tautology, then the argument is valid.
+
+
+### Rules of inference
+
+#### Common valid arguments
+
+| Rule                       | Example                                                                            |
+| -------------------------- | ---------------------------------------------------------------------------------- |
+| **Modus Ponens**           | $P \rightarrow Q$<br>$P$<br>$\overline{\therefore\ Q}$                             |
+| **Modus Tollens**          | $P \rightarrow Q$<br>$\neg Q$<br>$\overline{\therefore\ \neg P}$                   |
+| **Addition**               | $P$<br>$\overline{\therefore\ P \lor Q}$                                           |
+| **Simplification**         | $P \land Q$<br>$\overline{\therefore\ P}$                                          |
+| **Conjunction**            | $P$<br>$Q$<br>$\overline{\therefore\ P \land Q}$                                   |
+| **Hypothetical Syllogism** | $P \rightarrow Q$<br>$Q \rightarrow R$<br>$\overline{\therefore\ P \rightarrow R}$ |
+| **Disjunctive Syllogism**  | $P \lor Q$<br>$\neg P$<br>$\overline{\therefore\ Q}$                               |
+| **Resolution**             | $p \lor q$<br>$\neg p \lor r$<br>$\overline{\therefore q \lor r}$                  |
+
+
+TODO: look at Zybooks 2.2.4 and prove it here.  Show both a formal proof and also derive a tautology from the conjunction/implication version.
+- $(((a \lor b) \to (c \lor d)) \land \neg c \land \neg d) \to \neg a$
+
+
 
 ## Lecture 7
 Sections 2.4 - 2.6
