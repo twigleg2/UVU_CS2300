@@ -315,6 +315,60 @@ This can also be done with the implication $\to$, but be careful you do it corre
 ## Lecture 6
 Sections 2.1 - 2.3
 
+### Arguments
+- $\therefore$ This symbol means "therefore"
+
+An argument takes the logical statements that we are familiar with and writes them in a new form.  The following are equivalent:
+
+
+$$
+\begin{aligned}
+& p \to q \\
+& p \\
+& \overline{\therefore q} \\
+\end{aligned}
+\space \space \equiv \space \space ((p \to q) \land p) \to q
+$$
+
+
+Remember that the left side of an implication is called the hypothesis and the right side of an implication is called the conclusion.  That means that in this new format, all statements above the line are hypotheses, and the statement below the line is the conclusion.  So in this example:
+- $p \to q$ is a hypothesis
+- $p$ is a hypothesis
+- $q$ is the conclusion
+
+
+Arguments can also be written in english:
+
+$$
+\begin{aligned}
+& \text{If I have completed my homework, then I will turn it in} \\
+& \text{I have completed my homework} \\
+& \overline{\therefore \text{I will turn it in}}
+\end{aligned}
+$$
+
+#### valid arguments
+An argument is valid if it is a tautology, and invalid otherwise.  
+To prove that an argument is invalid, you must find a situation where all hypotheses are true and the conclusion is false. (Remember that when the hypothesis is false, the statement is considered to be true because in that scenario we aren't testing the hypothesis).
+
+#### Practice
+Are the following Valid or Invalid arguments? Use a truth table.
+
+$$
+\begin{aligned}
+& r \land s \\
+& r \to \neg s \\
+& \overline{\therefore \neg r \to s}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& p \to q \\
+& \neg p \to \neg q \\
+& \overline{\therefore q \to p}
+\end{aligned}
+$$
 
 ## Lecture 7
 Sections 2.4 - 2.6
