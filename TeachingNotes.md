@@ -395,11 +395,70 @@ If this statement is a tautology, then the argument is valid.
 | **Conjunction**            | $P$<br>$Q$<br>$\overline{\therefore\ P \land Q}$                                   |
 | **Hypothetical Syllogism** | $P \rightarrow Q$<br>$Q \rightarrow R$<br>$\overline{\therefore\ P \rightarrow R}$ |
 | **Disjunctive Syllogism**  | $P \lor Q$<br>$\neg P$<br>$\overline{\therefore\ Q}$                               |
-| **Resolution**             | $p \lor q$<br>$\neg p \lor r$<br>$\overline{\therefore q \lor r}$                  |
+| **Resolution**             | $P \lor Q$<br>$\neg P \lor R$<br>$\overline{\therefore Q \lor R}$                  |
 
+### Example Solution
+Given the following argument, we can show it is valid in more than one way:
 
-TODO: look at Zybooks 2.2.4 and prove it here.  Show both a formal proof and also derive a tautology from the conjunction/implication version.
-- $(((a \lor b) \to (c \lor d)) \land \neg c \land \neg d) \to \neg a$
+$$
+\begin{aligned}
+& (a \lor b) \to (c \lor d) \\
+& \neg c \\
+& \neg d \\
+& \overline{\therefore \neg a} \\
+\end{aligned}
+$$
+
+| Step | Statement                   | Rule Used          |
+| ---: | -------------------------   | ------------------ |
+|    1 | $(a \lor b) \to (c \lor d)$ | Hypothesis         |
+|    2 | $\neg c$                    | Hypothesis         |
+|    3 | $\neg d$                    | Hypothesis         |
+|    4 | $\neg c \land \neg d$       | Conjunction, 2,3   |
+|    5 | $\neg(c \lor d)$            | De Morgan's Law, 4 |
+|    6 | $\neg(a \lor b)$            | Modus Tollens, 1,5 |
+|    7 | $\neg a \land \neg b$       | De Morgan's Law, 6 |
+|    8 | $\neg a$                    | Simplification, 7  |
+
+| Step | Expression                                                                             | Law Used                    |
+| ---: | -----------------------------------------------------------------------------------    | --------------------------- |
+|    1 | $\big(((a \lor b) \to (c \lor d)) \land \neg c \land \neg d \big) \to \neg a$          | Given Statement             |
+|    2 | $\neg\big((a \lor b) \to (c \lor d) \land \neg c \land \neg d \big) \lor \neg a$       | Implication Identity        |
+|    3 | $\neg\big((\neg(a \lor b) \lor (c\lor d)) \land \neg c \land \neg d \big) \lor \neg a$ | Implication Identity        |
+|    4 | $\big(\neg(\neg(a \lor b) \lor (c\lor d)) \lor c \lor d \big) \lor \neg a$             | De Morgan’s Law             |
+|    5 | $\big((a \lor b) \land \neg(c\lor d) \lor c \lor d \big) \lor \neg a$                  | De Morgan + Double Negation |
+|    6 | $\big((a \lor b) \land (\neg c \land \neg d) \lor c \lor d \big) \lor \neg a$          | De Morgan’s Law             |
+|    6 | $\big((a \lor b) \land (\neg d \land \neg c) \lor c \lor d \big) \lor \neg a$          | Commutative Law             |
+|    7 | $\big((((a \lor b) \land \neg d) \land \neg c) \lor c \lor d \big) \lor \neg a$        | Associative Law             |
+|    8 | $\big(((a \lor b) \land \neg d) \lor c \land \neg c \lor c \lor d \big) \lor \neg a$   | Distributive Law            |
+|    9 | $\big(((a \lor b) \land \neg d) \lor c \land \top \lor d \big) \lor \neg a$            | Complement Law              |
+|   10 | $\big(((a \lor b) \land \neg d) \lor c \lor d \big) \lor \neg a$                       | Identity Law                |
+|   11 | $\big(((a \lor b) \land \neg d) \lor d \lor c \big) \lor \neg a$                       | Commutative Law             |
+|   12 | $\big(((a \lor b) \lor d) \land \neg d\lor d \lor c \big) \lor \neg a$                 | Distributive Law            |
+|   13 | $\big(((a \lor b) \lor d) \land \top \lor c \big) \lor \neg a$                         | Complement Law              |
+|   14 | $\big(((a \lor b) \lor d) \lor c \big) \lor \neg a$                                    | Identity Law                |
+|   15 | $(a \lor \neg a)\lor b \lor c \lor d$                                                  | Associative & Commutative   |
+|   16 | $\top \lor b \lor c \lor d$                                                            | Complement Law              |
+|   17 | $\top$                                                                                 | Domination Law              |
+
+| $a$ | $b$ | $c$ | $d$ | $a\lor b$ | $c\lor d$ | $(a\lor b)\to(c\lor d)$ | $\neg c$ | $\neg d$ | All premises | $\neg a$ |
+| :-: | :-: | :-: | :-: | :-------: | :-------: | :---------------------: | :------: | :------: | :----------: | :------: |
+|  T  |  T  |  T  |  T  |     T     |     T     |            T            |     F    |     F    |       F      |     F    |
+|  T  |  T  |  T  |  F  |     T     |     T     |            T            |     F    |     T    |       F      |     F    |
+|  T  |  T  |  F  |  T  |     T     |     T     |            T            |     T    |     F    |       F      |     F    |
+|  T  |  T  |  F  |  F  |     T     |     F     |          **F**          |     T    |     T    |       F      |     F    |
+|  T  |  F  |  T  |  T  |     T     |     T     |            T            |     F    |     F    |       F      |     F    |
+|  T  |  F  |  T  |  F  |     T     |     T     |            T            |     F    |     T    |       F      |     F    |
+|  T  |  F  |  F  |  T  |     T     |     T     |            T            |     T    |     F    |       F      |     F    |
+|  T  |  F  |  F  |  F  |     T     |     F     |          **F**          |     T    |     T    |       F      |     F    |
+|  F  |  T  |  T  |  T  |     T     |     T     |            T            |     F    |     F    |       F      |     T    |
+|  F  |  T  |  T  |  F  |     T     |     T     |            T            |     F    |     T    |       F      |     T    |
+|  F  |  T  |  F  |  T  |     T     |     T     |            T            |     T    |     F    |       F      |     T    |
+|  F  |  T  |  F  |  F  |     T     |     F     |          **F**          |     T    |     T    |       F      |     T    |
+|  F  |  F  |  T  |  T  |     F     |     T     |            T            |     F    |     F    |       F      |     T    |
+|  F  |  F  |  T  |  F  |     F     |     T     |            T            |     F    |     T    |       F      |     T    |
+|  F  |  F  |  F  |  T  |     F     |     T     |            T            |     T    |     F    |       F      |     T    |
+|  F  |  F  |  F  |  F  |     F     |     F     |            T            |     T    |     T    |     **T**    |   **T**  |
 
 
 
