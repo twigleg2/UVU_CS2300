@@ -461,10 +461,84 @@ $$
 |  F  |  F  |  F  |  F  |     F     |     F     |            T            |     T    |     T    |     **T**    |   **T**  |
 
 
+### Rules of Inference with Quantifiers
+We cannot apply the rules of inference from above to quantified statements.  However, we can eliminate the quantifiers by taking an element from the domain and plugging it into the quantified variable.  ex:
+
+- The domain is students from the class.
+- $\forall x (P(x))$
+- Joe is a student in the class
+- $P(\text{Joe})$
+
+Now, we can use $P(\text{Joe})$ with the rules of inference from above.  This is an example of _Universal Instantiation_.  
+
+There are four rules of inference for quantified statements:
+
+| Rule | Name |
+| ---- | ---- |
+| $c$ is _any_ element from the domain<br>$\forall x P(x)$<br>$\overline{\therefore P(c)}$ | Universal Instantiation |
+| $c$ is an _arbitrary_ element from the domain<br>$P(c)$<br>$\overline{\therefore \forall x P(x)}$ | Universal Generalization |
+| $\exists x P(x)$<br>$\overline{\therefore P(c) \land (c}$ is a _particular_ element from the domain$)$ | Existential Instantiation* |
+| $c$ is _any_ element from the domain<br>$P(c)$<br>$\overline{\therefore \exists x P(x)}$ | Existential Generalization |
+
+#### Arbitrary and Particular elements
+- **Arbitrary elements** have no special properties other than the ones shared by all elements of a domain.
+  - Ex. If the domain is humans and their dogs, then an arbitrary element has a heartbeat and breathes air.
+- **Particular elements**  may have special properties that aren't shared by all other elements of the domain.
+  - Ex. If the domain is humans and their dogs, then Joe is a particular element (with two thumbs).
+  - *NOTE: If you use _Existential Instantiation_, you CAN NOT use a _particular_ element that has already been defined!  It must be newly named element.
+  - Particular elements are often given as part of the hypothesis.  
+
+At any point during a proof, you can define a new arbitrary or particular element on a new line.  ex:
+
+| Rule | Name |
+| ---- | ---- |
+| $k$ is an _arbitrary_ element | element definition |
+| Joe is a _particular_ element | element definition |
+
+
+### Invalid Arguments with Quantifiers
+To show that an argument which uses quantifiers is invalid, you can define a domain that causes all the hypotheses to be true and the conclusion to be false.  Create a table with the predicates along the top and the domain elements on the left, then assign each cell the appropriate truth value that makes the argument invalid. ex:
+
+$$
+\begin{aligned}
+& \exists x P(x) \\
+& \exists x Q(x) \\
+& \overline{\therefore \exists x(P(x) \land Q(x))}
+\end{aligned}
+$$
+
+| | $P$ | $Q$ |
+| - | --- | --- |
+| c | $T$ | $F$ |
+| d | $F$ | $T$ |
+
+- $\exists x P(x)$ is true, because c is $T$ in the $P$ column
+- $\exists x Q(x)$ is true, because d is $T$ in the $Q$ column
+- $\exists x(P(x) \land Q(x))$ is false, because there is no no row where both $P$ and $Q$ are $T$.
 
 ## Lecture 7
-Sections 2.4 - 2.6
+Sections 2.5 - 2.6
 
+### Theorems
+A theorem is a statement that can be proven true.  A proof might contain _axioms_ which are statements that are assumed to be true.  Most theorems are concerned with all elements in a domain (universal quantifier).
+
+#### Proof by exhaustion
+It might be possible to prove a theorem by testing all elements in a domain if the domain is small enough (or you have enough computing power).  We can list out all members of a domain and assign them one at a time to a variable to test.
+
+$n \in \{-1,0,1\} \to n^2 = |n|$
+
+the $\in$ symbol means "element of".  So in this example, if $n$ is an element of the domain {-1, 0,1 }, then $n^2 = |n|$.  We can very prove this true be testing all elements in this domain because it contains only three elements.  However, if we added another element to the domain, it might no longer be true.
+
+### Proofs of universal statements
+Many proofs are concerned with a domain the is infinitely large.  In this case, we need to use _Universal Generalization_ (see Rules of Inference with Quantifiers above).
+
+As before, we can disprove a universal statement by providing a single counterexample.
+
+### Proofs of existential statements
+As before, we can prove an existential statement by providing a single example.  This is called a _constructive proof of existence_.  We can also prove it with a _nonconstructive proof of existence_, which does not provide an example, but instead shows that the existence of an element without the required properties would cause a contradiction.  
+
+To prove an existential statement false ($\neg \exists x$), we would need to consider all elements of the domain.  If we use De Morgan's law to change the existential quantifier to a universal quantifier, then the proof uses _universal generalization_, as above.  
+ex: $\neg \exists x P(x) \equiv \forall x \neg P(x)$
 
 ## Lecture 8
 Sections 2.7 - 2.10
