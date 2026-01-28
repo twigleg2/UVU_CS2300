@@ -517,28 +517,62 @@ $$
 - $\exists x(P(x) \land Q(x))$ is false, because there is no no row where both $P$ and $Q$ are $T$.
 
 ## Lecture 7
-Sections 2.5 - 2.6
+Sections 2.4 - 2.6
+
+### Mathematical definitions
+Read Zybooks section 2.4 if you need a refresher.
 
 ### Theorems
 A theorem is a statement that can be proven true.  A proof might contain _axioms_ which are statements that are assumed to be true.  Most theorems are concerned with all elements in a domain (universal quantifier).
 
+### Proofs of universal statements
+
 #### Proof by exhaustion
-It might be possible to prove a theorem by testing all elements in a domain if the domain is small enough (or you have enough computing power).  We can list out all members of a domain and assign them one at a time to a variable to test.
+It might be possible to prove a theorem by testing all elements in a domain if the domain is small enough (or you have enough computing power).  We do this by listing out all members of a domain and assigning them one at a time to a variable to test.
 
 $n \in \{-1,0,1\} \to n^2 = |n|$
 
-the $\in$ symbol means "element of".  So in this example, if $n$ is an element of the domain {-1, 0,1 }, then $n^2 = |n|$.  We can very prove this true be testing all elements in this domain because it contains only three elements.  However, if we added another element to the domain, it might no longer be true.
+the $\in$ symbol means "element of".  So in this example, if $n$ is an element of the domain {-1, 0,1 }, then $n^2 = |n|$.  We can very prove this true by testing all elements in this domain because it contains only three elements.  However, if we added another element to the domain, it might no longer be true.
 
-### Proofs of universal statements
-Many proofs are concerned with a domain the is infinitely large.  In this case, we need to use _Universal Generalization_ (see Rules of Inference with Quantifiers above).
+#### Proof by universal generalization
 
-As before, we can disprove a universal statement by providing a single counterexample.
+Many proofs are concerned with a domain the is infinitely large (or at least too large to check every element).  In this case, we need to use _Universal Generalization_ (see Rules of Inference with Quantifiers above).  Begin by naming an arbitrary element in the domain, and then prove the statement for that arbitrary element.  Because it's arbitrary and it shares all of its characteristics with all other elements in the domain, this is sufficient to prove the statement true for all elements in the domain.
+
+**Note**: We cannot prove a universal statement by finding a single example that satisfies the statement, because that particular element may not share all of its properties with all other elements in the domain.
+
+#### Counterexamples
+
+As before, we can disprove a universal statement by providing a single counterexample.  In other words, we can find a _particular element_ from the domain that shows the statement is false.
+
+For conditional statements, $\to$, a counterexample must satisfy _all_ hypotheses (premises) and contradict the conclusion.  If the particular element does not satisfy all hypotheses and also contradict the conclusion, then it is not a counterexample.
+
 
 ### Proofs of existential statements
-As before, we can prove an existential statement by providing a single example.  This is called a _constructive proof of existence_.  We can also prove it with a _nonconstructive proof of existence_, which does not provide an example, but instead shows that the existence of an element without the required properties would cause a contradiction.  
 
-To prove an existential statement false ($\neg \exists x$), we would need to consider all elements of the domain.  If we use De Morgan's law to change the existential quantifier to a universal quantifier, then the proof uses _universal generalization_, as above.  
+#### constructive proof of existence
+As before, we can prove an existential statement by providing an example (a particular element) that satisfies the statement.  This is called a _constructive proof of existence_.  
+
+#### nonconstructive proof of existence
+
+We can also prove it with a _nonconstructive proof of existence_, which does not provide an example.  One way to do this would be to show that the existence of an element without the required properties would cause a contradiction.  There are many other ways to form a nonconstructive existence proof.
+
+#### Disproving existential statements
+
+To disprove an existential statement (i.e. $\neg \exists x$), we would need to consider all elements of the domain.  If we use De Morgan's law to change the existential quantifier to a universal quantifier, then the proof uses _universal generalization_, as above.  
 ex: $\neg \exists x P(x) \equiv \forall x \neg P(x)$
+
+### Best Practices and Common Errors
+
+1. A statement cannot be both true and not true at the same time.  Therefore:
+   - If you can prove that the negation of the original statement is true ($\neg P \equiv T$), then the original statement must be false ($P \equiv F$).
+   - If assuming the negation of the original statement is true ($\neg P \equiv F$) leads to a contradiction, then the original statement must be true ($P \equiv T$).
+   - If assuming the negation of the original statement is true leads instead to a counterexample (that is, a situation where the premises are satisfied but no contradiction arises), then the original statement is false.
+
+$$
+H \lor D \\
+D \lor C \\
+\therefore H \lor C
+$$
 
 ## Lecture 8
 Sections 2.7 - 2.10
