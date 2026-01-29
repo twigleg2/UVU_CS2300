@@ -565,7 +565,7 @@ ex: $\neg \exists x P(x) \equiv \forall x \neg P(x)$
 
 1. A statement cannot be both true and not true at the same time.  Therefore:
    - If you can prove that the negation of the original statement is true ($\neg P \equiv T$), then the original statement must be false ($P \equiv F$).
-   - If assuming the negation of the original conclusion is true ($\neg P \equiv F$) leads to a contradiction, then the original statement must be true ($P \equiv T$).
+   - If assuming the negation of the original conclusion is true ($\neg P \equiv T$) leads to a contradiction, then the original statement must be true ($P \equiv T$).
    - If assuming the negation of the original conclusion is true leads instead to a counterexample (that is, a situation where the premises are satisfied but no contradiction arises), then the original Argument (statement) is false.
 
 $$
