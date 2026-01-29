@@ -2,7 +2,8 @@
 
 ## Lecture 1
 
-Read the syllabus
+Read the syllabus  
+Study LaTex
 
 ## Lecture 2
 Sections 1.1 - 1.3
