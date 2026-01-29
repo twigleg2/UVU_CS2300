@@ -561,18 +561,13 @@ We can also prove it with a _nonconstructive proof of existence_, which does not
 To disprove an existential statement (i.e. $\neg \exists x$), we would need to consider all elements of the domain.  If we use De Morgan's law to change the existential quantifier to a universal quantifier, then the proof uses _universal generalization_, as above.  
 ex: $\neg \exists x P(x) \equiv \forall x \neg P(x)$
 
-### Best Practices and Common Errors
+### Tips and Tricks
 
-1. A statement cannot be both true and not true at the same time.  Therefore:
-   - If you can prove that the negation of the original statement is true ($\neg P \equiv T$), then the original statement must be false ($P \equiv F$).
-   - If assuming the negation of the original conclusion is true ($\neg P \equiv T$) leads to a contradiction, then the original statement must be true ($P \equiv T$).
-   - If assuming the negation of the original conclusion is true leads instead to a counterexample (that is, a situation where the premises are satisfied but no contradiction arises), then the original Argument (statement) is false.
-
-$$
-H \lor D \\
-D \lor C \\
-\therefore H \lor C
-$$
+1. Statements:
+   - A statement cannot be both true and not true at the same time.  Therefore, if you can prove that the negation of the statement is true ($\neg P \equiv T$), then the original statement must be false ($P \equiv F$).
+2. Arguments (assume all premises are true):
+   - If assuming the _negation_ of the conclusion is true leads to a contradiction, then the argument must be valid.
+   - If assuming the _negation_ of the conclusion is true leads instead to a counterexample (that is, a situation where the premises are satisfied but the conclusion is false), then the argument is invalid.
 
 ## Lecture 8
 Sections 2.7 - 2.10
