@@ -607,11 +607,31 @@ Recall that a contrapositive is logically equivalent to the original conditional
 $p \to q \equiv \neg q \to \neg p$  
 Therefore, we assume the negation of the conclusion and derive the negation of the hypothesis.  
 
+TODO: put an example here
 
 Why use proof by contrapositive?
 - The negation of the conclusion might be simpler and easier to work with than the hypothesis.
 - The negation of the conclusion might provide better assumptions.
 - The negation of the conclusion might give more direction.
+
+#### Multiple Hypotheses
+
+$(H_1 \land H_2 \land ... \land H_n) \to C$
+
+Because our hypotheses are conjoined, we only need to show that one of the hypotheses is false in a proof by contrapositive.  
+
+| statement | rule used |
+| --------- | --------- |
+| $(H_1 \land H_2) \to C$ | Given |
+| $\neg C \to \neg (H_1 \land H_2)$ | Contrapositive |
+| $\neg C \to (\neg H_1 \lor \neg H_2)$ | De Morgan's |
+| $\neg \neg C \lor (\neg H_1 \lor \neg H_2)$ | Conditional Identity |
+| $C \lor (\neg H_1 \lor \neg H_2)$ | Double Negation |
+| $(C \lor \neg H_1) \lor \neg H_2$ | Associative |
+| $\neg (C \lor \neg H_1) \to \neg H_2$ | Conditional Identity |
+| $ (\neg C \land H_1) \to \neg H_2$ | De Morgan's |
+
+Notice that the original conclusion and only one of the multiple hypotheses is negated.  Also note that if we used the commutative law before the associative law, we could have picked any one of the hypotheses to be the negated one.
 
 ## Lecture 9
 Midterm 1 Review
