@@ -573,6 +573,45 @@ ex: $\neg \exists x P(x) \equiv \forall x \neg P(x)$
 ## Lecture 8
 Sections 2.7 - 2.10
 
+### Direct Proofs of Conditional Statements
+The Hypotheses are assumed to be true and the conclusion is proven as a direct result of the assumption. It does not use contradiction or contrapositive.  
+
+ex. Prove the following: If $x$ and $y$ are positive real numbers, then  $\frac{x}{y} + \frac{y}{x} \geq 2$.  
+
+- Hypothesis: $x$ and $y$ are positive real numbers  
+- Conclusion: $\frac{x}{y} + \frac{y}{x} \geq 2$
+
+We start the proof by stating one or more known facts that align with the hypothesis, then proceed step by step to derive the conclusion
+
+$$
+\begin{align}
+(x-y)^2 &\geq 0 :\text{known fact}\\
+x^2 - 2xy + y^2&\geq 0 \\
+x^2 + y^2 &\geq 2xy \\
+\frac{x^2}{xy} + \frac{y^2}{xy} &\geq \frac{2xy}{xy} \\
+\frac{x}{y} + \frac{y}{x} &\geq 2
+\end{align}
+$$
+
+NOTE: There are two more known facts that I could have added to the beginning of the proof (which together can be used to derive the first line of the proof), but did not on the assumption that they are obvious:
+1. Adding or subtracting two real numbers results in a real number ($x-y$ is real)
+2. The square of any real number is $\geq 0$
+
+#### Common mistakes
+
+Why didn't we start the proof with the given equation, $\frac{x}{y} + \frac{y}{x} \geq 2$?  Remember that the original argument was in the form if...then..., ($p \to q$).  Implications cannot go the other direction ($p \leftarrow q$), and so we cannot start the proof with the conclusion and work backward.  However, we can conduct _exploration_ by starting with the conclusion and trying some things to give us an idea of where to start and how to proceed. During this process, We might even discover the exact place that we want to start the proof from.
+
+### Proof by Contrapositive
+
+Recall that a contrapositive is logically equivalent to the original conditional statement:  
+$p \to q \equiv \neg q \to \neg p$  
+Therefore, we assume the negation of the conclusion and derive the negation of the hypothesis.  
+
+
+Why use proof by contrapositive?
+- The negation of the conclusion might be simpler and easier to work with than the hypothesis.
+- The negation of the conclusion might provide better assumptions.
+- The negation of the conclusion might give more direction.
 
 ## Lecture 9
 Midterm 1 Review
