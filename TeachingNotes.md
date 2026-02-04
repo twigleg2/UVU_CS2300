@@ -349,7 +349,11 @@ We can show that an argument is valid or not by drawing a truth table.  To do th
 We can skip or ignore any case where one or more hypotheses are false, because validity assumes the hypotheses are true.
 
 #### Practice
-Are the following Valid or Invalid arguments? Use a truth table.
+Are the following Valid or Invalid arguments? Use a truth table.[^arguments]
+
+[^arguments]: Arguments can be rewritten by conjoining the premises and implying the conclusion.  
+$(P_1 \land P_2 \land ... \land P_n) \to C$  
+If this statement is a tautology, then the argument is valid.
 
 $$
 \begin{aligned}
@@ -374,13 +378,6 @@ $$
 & \overline{\therefore q \to p}
 \end{aligned}
 $$
-
-##### Footnote
-
-Arguments can be rewritten by conjoining the premises and implying the conclusion.  The first practice problem above can be rewritten as:
-- $((p \to q) \land p) \to q$
-
-If this statement is a tautology, then the argument is valid.
 
 
 ### Rules of inference
@@ -553,14 +550,17 @@ For conditional statements, $\to$, a counterexample must satisfy _all_ hypothese
 #### constructive proof of existence
 As before, we can prove an existential statement by providing an example (a particular element) that satisfies the statement.  This is called a _constructive proof of existence_.  
 
+
 #### nonconstructive proof of existence
 
 We can also prove it with a _nonconstructive proof of existence_, which does not provide an example.  One way to do this would be to show that the existence of an element without the required properties would cause a contradiction.  There are many other ways to form a nonconstructive existence proof.
+
 
 #### Disproving existential statements
 
 To disprove an existential statement (i.e. $\neg \exists x$), we would need to consider all elements of the domain.  If we use De Morgan's law to change the existential quantifier to a universal quantifier, then the proof uses _universal generalization_, as above.  
 ex: $\neg \exists x P(x) \equiv \forall x \neg P(x)$
+
 
 ### Tips and Tricks
 
@@ -584,22 +584,24 @@ ex. Prove the following: If $x$ and $y$ are positive real numbers, then  $\frac{
 We start the proof by stating one or more known facts that align with the hypothesis, then proceed step by step to derive the conclusion
 
 $$
-\begin{align}
-(x-y)^2 &\geq 0 :\text{known fact}\\
+\begin{aligned}
+(x-y)^2 &\geq 0 &\text{: known fact}\\
 x^2 - 2xy + y^2&\geq 0 \\
 x^2 + y^2 &\geq 2xy \\
 \frac{x^2}{xy} + \frac{y^2}{xy} &\geq \frac{2xy}{xy} \\
 \frac{x}{y} + \frac{y}{x} &\geq 2
-\end{align}
+\end{aligned}
 $$
 
 NOTE: There are two more known facts that I could have added to the beginning of the proof (which together can be used to derive the first line of the proof), but did not on the assumption that they are obvious:
 1. Adding or subtracting two real numbers results in a real number ($x-y$ is real)
 2. The square of any real number is $\geq 0$
 
+
 #### Common mistakes
 
 Why didn't we start the proof with the given equation, $\frac{x}{y} + \frac{y}{x} \geq 2$?  Remember that the original argument was in the form if...then..., ($p \to q$).  Implications cannot go the other direction ($p \leftarrow q$), and so we cannot start the proof with the conclusion and work backward.  However, we can conduct _exploration_ by starting with the conclusion and trying some things to give us an idea of where to start and how to proceed. During this process, We might even discover the exact place that we want to start the proof from.
+
 
 ### Proof by Contrapositive
 
@@ -613,6 +615,7 @@ Why use proof by contrapositive?
 - The negation of the conclusion might be simpler and easier to work with than the hypothesis.
 - The negation of the conclusion might provide better assumptions.
 - The negation of the conclusion might give more direction.
+
 
 #### Multiple Hypotheses
 
@@ -629,9 +632,58 @@ Because our hypotheses are conjoined, we only need to show that one of the hypot
 | $C \lor (\neg H_1 \lor \neg H_2)$ | Double Negation |
 | $(C \lor \neg H_1) \lor \neg H_2$ | Associative |
 | $\neg (C \lor \neg H_1) \to \neg H_2$ | Conditional Identity |
-| $ (\neg C \land H_1) \to \neg H_2$ | De Morgan's |
+| $(\neg C \land H_1) \to \neg H_2$ | De Morgan's |
 
 Notice that the original conclusion and only one of the multiple hypotheses is negated.  Also note that if we used the commutative law before the associative law, we could have picked any one of the hypotheses to be the negated one.
+
+
+### Proof by Contradiction (Indirect Proof)
+A proof by contradiction assumes that the theorem is _false_, then proceeds until a contradiction arises. The presence of the contradiction shows that the conclusion cannot be true and, therefore, the original theorem must be true.  
+Generally, we start a proof by contradiction by saying "suppose $\neg t$", or "assume $\neg t$" rewording the given theorem ($t$) into a form that is logically equivalent to the negation of the theorem ($\neg t$).
+
+| Statement | Rule used |
+| --------- | --------- |
+| $P \to Q$ | _given_ |
+| $\neg(P \to Q)$ | Assume $\neg$_given_ |
+| $\neg(\neg P \lor Q)$ | Conditional Identity |
+| $\neg \neg P \land \neg Q$ | De Morgan's Law |
+| $P \land \neg Q$ | Double Negation |
+
+Notice that our hypotheses remain unchanged, but the conclusion is now assumed to be false. Also notice that there is no longer an implication! This means that we are free to begin our proof by contradiction with the statement $\neg Q$, similar to a proof by contrapositive.[^contrapositive]
+
+[^contrapositive]: In fact, a proof by contrapositive is a special case of a proof by contradiction, where the contradiction is $P \land \neg P$.
+
+ex. Prove:  
+If both $a > 0, b > 0$, then $\sqrt{a} + \sqrt{b} \neq \sqrt{a + b}$  
+Suppose  $a > 0, b > 0$ and $\sqrt{a} + \sqrt{b} = \sqrt{a + b}$
+
+$$
+\begin{aligned}
+a > 0&, b > 0 &\text{: assumption}\\
+\sqrt{a} + \sqrt{b} &= \sqrt{a + b} &\text{: assumption} \\
+(\sqrt{a} + \sqrt{b})^2 &= (\sqrt{a + b})^2 \\
+(\sqrt{a})^2 + 2\sqrt{ab} + (\sqrt{b})^2 &= a + b \\
+a + 2\sqrt{ab} + b &= a + b \\
+2\sqrt{ab} &= 0 \\
+\sqrt{ab} &= 0 \\
+ab &= 0 \\
+\text{either } a = 0 &\text{ or } b = 0 \\
+\text{This contradicts the assumption } a > 0&, b > 0
+\end{aligned}
+$$
+
+
+### Proof by cases
+A proof by cases breaks down the domain into parts, and proves each part of the domain separately. Some common cases might include:
+- even and odd numbers
+- rational and irrational numbers
+- positive, negative, and 0
+
+It's extremely important that all items in the domain are included in at least one case![^cases]
+
+[^cases]: It's fine if some items are included in more than one case.
+
+Sometimes there are cases that are so similar that they can be combined into one case.  For example, consider a proof that is concerned with two numbers, $x$ and $y$, where one of them is even and the other is odd. The first case might assign $x$ to be the even one, and $y$ to be the odd one. After proving that case, the second case would be the exact same, except that $x$ would be odd and $y$ would be even. Since both $x$ and $y$ are arbitrary, and the conclusion does not change if the names of the variables are swapped, proving the first case automatically proves the second case.  Be careful, though.  If there is any asymmetry, for example $\frac{x}{y}$, this would not apply.
 
 ## Lecture 9
 Midterm 1 Review
