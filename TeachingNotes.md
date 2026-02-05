@@ -473,10 +473,10 @@ There are four rules of inference for quantified statements:
 
 | Rule | Name |
 | ---- | ---- |
-| $c$ is _any_ element from the domain<br>$\forall x P(x)$<br>$\overline{\therefore P(c)}$ | Universal Instantiation |
+| $c$ is an _arbitrary_ or a _particular_ element from the domain<br>$\forall x P(x)$<br>$\overline{\therefore P(c)}$ | Universal Instantiation |
 | $c$ is an _arbitrary_ element from the domain<br>$P(c)$<br>$\overline{\therefore \forall x P(x)}$ | Universal Generalization |
 | $\exists x P(x)$<br>$\overline{\therefore P(c) \land (c}$ is a _particular_ element from the domain$)$ | Existential Instantiation* |
-| $c$ is _any_ element from the domain<br>$P(c)$<br>$\overline{\therefore \exists x P(x)}$ | Existential Generalization |
+| $c$ is an _arbitrary_ or a _particular_ element from the domain<br>$P(c)$<br>$\overline{\therefore \exists x P(x)}$ | Existential Generalization |
 
 #### Arbitrary and Particular elements
 - **Arbitrary elements** have no special properties other than the ones shared by all elements of a domain.
@@ -644,7 +644,7 @@ Generally, we start a proof by contradiction by saying "suppose $\neg t$", or "a
 | Statement | Rule used |
 | --------- | --------- |
 | $P \to Q$ | _given_ |
-| $\neg(P \to Q)$ | Assume $\neg$_given_ |
+| $\neg(P \to Q)$ | Assume $\neg$ _given_ |
 | $\neg(\neg P \lor Q)$ | Conditional Identity |
 | $\neg \neg P \land \neg Q$ | De Morgan's Law |
 | $P \land \neg Q$ | Double Negation |
