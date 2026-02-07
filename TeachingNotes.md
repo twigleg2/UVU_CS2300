@@ -478,20 +478,25 @@ There are four rules of inference for quantified statements:
 | $\exists x P(x)$<br>$\overline{\therefore P(c) \land (c}$ is a _particular_ element from the domain$)$ | Existential Instantiation* |
 | $c$ is an _arbitrary_ or a _particular_ element from the domain<br>$P(c)$<br>$\overline{\therefore \exists x P(x)}$ | Existential Generalization |
 
-#### Arbitrary and Particular elements
-- **Arbitrary elements** have no special properties other than the ones shared by all elements of a domain.
+#### Arbitrary elements
+- Arbitrary elements have no assumed properties other than the ones shared by all elements of the domain.
   - Ex. If the domain is humans and their dogs, then an arbitrary element has a heartbeat and breathes air.
-- **Particular elements**  may have special properties that aren't shared by all other elements of the domain.
+- During a proof, you can define a new arbitrary element on a new line if a universal quantifier is in scope which binds that element. ex:
+  - $k$ is an _arbitrary_ element | element definition
+
+
+#### Particular elements
+- Particular Elements may have special properties that aren't shared by all other elements of the domain.
   - Ex. If the domain is humans and their dogs, then Joe is a particular element (with two thumbs).
-  - *NOTE: If you use _Existential Instantiation_, you CAN NOT use a _particular_ element that has already been defined!  It must be newly named element.
-  - Particular elements are often given as part of the hypothesis.  
+- Particular elements are often given as part of the hypothesis.  
+- *If you use _Existential Instantiation_, you can NOT name a _particular_ element that has already been defined!  It must be newly named element.
+- Unlike arbitrary elements, you can only define a particular element using Existential Instantiation, unless that particular element is fully specified.
 
-At any point during a proof, you can define a new arbitrary or particular element on a new line.  ex:
+#### Fully Specified elements
+-Fully Specified elements are a type of particular element.  These have a complete definition and a specific identity, and you can freely define them in your proofs.  This would be like saying "let x = 2" or "let y = my classmate Joe".  The Particular Element described above assumes that element is not fully specified.  Or in other words, we know that it the special property from the existential statement, but we don't know the full identity of that element.
 
-| Rule | Name |
-| ---- | ---- |
-| $k$ is an _arbitrary_ element | element definition |
-| Joe is a _particular_ element | element definition |
+
+
 
 
 ### Invalid Arguments with Quantifiers
