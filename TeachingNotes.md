@@ -493,7 +493,8 @@ There are four rules of inference for quantified statements:
 - Unlike arbitrary elements, you can only define a particular element using Existential Instantiation, unless that particular element is fully specified.
 
 #### Fully Specified elements
--Fully Specified elements are a type of particular element.  These have a complete definition and a specific identity, and you can freely define them in your proofs.  This would be like saying "let x = 2" or "let y = my classmate Joe".  The Particular Element described above assumes that element is not fully specified.  Or in other words, we know that it the special property from the existential statement, but we don't know the full identity of that element.
+- Fully Specified elements are a type of particular element.  These have a complete definition and a specific identity, and you can freely define them in your proofs.  This would be like saying "let x = 2" or "let y = my classmate Joe".  
+- The Particular Element described above assumes that element is not fully specified.  In other words, we know that it has the special property from the existential statement, but we don't know the full identity.
 
 
 
