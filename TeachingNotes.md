@@ -496,10 +496,6 @@ There are four rules of inference for quantified statements:
 - Fully Specified elements are a type of particular element.  These have a complete definition and a specific identity, and you can freely define them in your proofs.  This would be like saying "let x = 2" or "let y = my classmate Joe".  
 - The Particular Element described above assumes that element is not fully specified.  In other words, we know that it has the special property from the existential statement, but we don't know the full identity.
 
-
-
-
-
 ### Invalid Arguments with Quantifiers
 To show that an argument which uses quantifiers is invalid, you can define a domain that causes all the hypotheses to be true and the conclusion to be false.  Create a table with the predicates along the top and the domain elements on the left, then assign each cell the appropriate truth value that makes the argument invalid. ex:
 
@@ -698,6 +694,94 @@ Midterm 1 Review
 ## Lecture 10
 Sections 3.1 - 3.4
 
+### Sets
+A _set_ is a collection of objects, and an object in that set is called an _element_.  This should feel familiar, since a domain is a set.  Sets can be infinite or finite.  If a set is small enough, we can define it by listing all elements in the set using _roster notation_:
+$$F = \{1,2,3,5,8,13\}$$
+
+The order of items in a set is unimportant. So:
+$$\text{If }G = \{13,5,8,1,2,3\} \text{, then }F = G$$
+
+Sets are denoted with capital letters
+
+#### Some new symbols
+
+- $\in$ : element of
+- $\notin$ : not an element of
+- $\empty$ : empty set, null set, or $\{\}$
+
+so:  
+
+- $1 \in F$ is true  
+- $10 \in F$ is false  
+- $10 \notin F$ is true  
+- $F \neq \empty$ is true
+
+#### Cardinality
+The number of items in a set, shown like this:
+- $|F| = 6$
+
+A set cannot contain duplicate elements, so if you ever see a "set" with duplicates in it, do not count the duplicates when determining cardinality.
+
+#### More new symbols
+Some sets are so common that we give them their own symbol:  
+- $\mathbb{N}$ : Natural Numbers (may or may not include zero)
+- $\mathbb{N}_0$ : Natural Numbers (including zero)
+- $\mathbb{N}^+$ : Natural numbers (excluding zero)
+- $\mathbb{Z}$ : Integers
+- $\mathbb{Q}$ : Rational Numbers
+- $\mathbb{P}$ : Irrational numbers
+- $\mathbb{R}$ : Real numbers
+
+Adding a superscript to the set symbol can modify the set:
+- $\mathbb{Z}^+$ : Positive Integers
+- $\mathbb{Z}^-$ : Negative Integers
+
+#### Set builder notation
+Sometimes we want to define a set, but listing all of the elements would be impractical.  In this case, we can pick elements out of a larger set by establishing rules that each element must follow to be included.
+$$
+A = \{x \in S : P(x)\}
+$$
+
+This is read, "All $x$ in set $S$ such that $P(x)$".  
+More specifically:
+
+$$
+B = \{x \in \mathbb{Z} : 100 \leq x < 200\}
+$$
+
+All integers between 100 (inclusive) and 200 (exclusive)
+
+#### Subsets
+The **Universal set**, $U$, contains all elements relevant to the current context.  
+For example, if we are talking about set $B$ from above, the universal set would be all integers, $\mathbb{Z}$, and $B$ is a **subset** of $\mathbb{Z}$
+- $B \subseteq \mathbb{Z}$
+
+Since we know that $\mathbb{Z}$ contains elements that $B$ does not, we can use the **proper subset** symbol:
+- $B \subset \mathbb{Z}$
+
+What the difference beetwen these two symbols?
+- Subset $\subseteq$ : allows for the sets on either side to be exactly equal
+- Proper Subset $\subset$ : Does NOT allow for the two sets to be equal.  
+
+### Sets of Sets
+A set can contain elements that are themselves sets:
+
+$$A = \{\{1,2,3\},\{1\}, \emptyset\}$$
+
+It's important to note that elements in a set within a set are not automatically elements of the outer set!
+- $1 \notin$ A
+- $\{1\} \in A$
+
+#### Power sets
+A power set is a set of all subsets of a set, written $\mathcal{P}(A)$ [^powerset]  
+If $A = \{1,2,3\}$, then $\mathcal{P}(A) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{2,3\}, \{1,3\}, \{1,2,3\}\}$
+
+[^powerset]: Zybooks uses $P(A)$, which I don't like because it's the same as a predicate $P(x)$
+
+#### Cardinality of power sets
+If $|A| = n$, then $|\mathcal{P}(A)| = 2^n$
+
+### Union and Intersection
 
 ## Lecture 11
 Sections 3.5 - 3.7
