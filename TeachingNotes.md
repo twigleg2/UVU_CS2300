@@ -781,7 +781,30 @@ If $A = \{1,2,3\}$, then $\mathcal{P}(A) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1
 #### Cardinality of power sets
 If $|A| = n$, then $|\mathcal{P}(A)| = 2^n$
 
-### Union and Intersection
+### Set Operators
+
+#### Union and Intersection
+- Union : $\cup$
+- Intersection : $\cap$
+
+If $A$ and $B$ are sets:
+- $A \cup B$ would include all elements from $A$ or $B$ sets.
+- $A \cap B$ would include all elements from $A$ and $B$.
+  - Notice how the symbols relate to $\lor$ and $\land$
+
+#### Other operators
+- difference: $-$
+  - $A - B$ : All the elements in set $A$, with any elements found in $B$ removed
+  - This is not commutative!
+- Symmetric difference: $\oplus$
+  - $A \oplus B$ : All the elements from both $A$ and $B$ with any elements found in both removed
+  - This is commutative
+- Compliment: $\bar{A}$
+  - $\bar{A}$ : All of the elements from the universal set $U$, with hte elements from $A$ removed.
+
+For a table summarizing the operations, see Zybooks 3.3.4 
+
+### Set Identities
 
 ## Lecture 11
 Sections 3.5 - 3.7
