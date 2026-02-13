@@ -771,10 +771,11 @@ $$A = \{\{1,2,3\},\{1\}, \emptyset\}$$
 It's important to note that elements in a set within a set are not automatically elements of the outer set!
 - $1 \notin$ A
 - $\{1\} \in A$
+- $\{3, 2, 1\} \in A$
 
 #### Power sets
-A power set is a set of all subsets of a set, written $\mathcal{P}(A)$ [^powerset]  
-If $A = \{1,2,3\}$, then $\mathcal{P}(A) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{2,3\}, \{1,3\}, \{1,2,3\}\}$
+A power set is a set of all subsets of a set, written $\mathcal{P}(B)$ [^powerset]  
+If $B = \{1,2,3\}$, then $\mathcal{P}(B) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{2,3\}, \{1,3\}, \{1,2,3\}\}$
 
 [^powerset]: Zybooks uses $P(A)$, which I don't like because it's the same as a predicate $P(x)$
 
