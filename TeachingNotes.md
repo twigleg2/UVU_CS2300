@@ -165,10 +165,10 @@ Sections 1.4 - 1.5
 
 | Law | $\lor$ version | $\land$ version |
 | --- | --- | --- |
-| Complement (cont.) | $p \lor \neg p \equiv T$ | $p \land \neg p \equiv F$ |
+| Idempotent | $p \lor p \equiv p$ | $p \land p \equiv p$ |
 | Identity | $p \lor F \equiv p$ | $p \land T \equiv p$ |
 | Domination | $p \lor T \equiv T$ | $p \land F \equiv F$ |
-| Idempotent | $p \lor p \equiv p$ | $p \land p \equiv p$ |
+| Complement (cont.) | $p \lor \neg p \equiv T$ | $p \land \neg p \equiv F$ |
 | Commutative | $p \lor q \equiv q \lor p$ | $p \land q \equiv q \land p$ |
 | Associative | $p \lor (q \lor r) \equiv (p \lor q) \lor r$ | $p \land (q \land r) \equiv (p \land q) \land r$ |
 | Distributive | $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ | $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$ |
@@ -802,9 +802,42 @@ If $A$ and $B$ are sets:
 - Compliment: $\bar{A}$
   - $\bar{A}$ : All of the elements from the universal set $U$, with hte elements from $A$ removed.
 
-For a table summarizing the operations, see Zybooks 3.3.4 
+#### Table of operators
+
+| Operation | Notation | Description |
+| --- | --- | --- |
+| Intersection | $A \cap B$ | $\{x : (x \in A) \land (x \in B)\}$ |
+| Union | $A \cup B$ | $\{x : (x \in A) \lor (x \in B)\}$ |
+| Difference | $A-B$ | $\{x : (x \in A) \land (x \notin B)\}$ |
+| Symmetric Difference | $A \oplus B$ | $\{x : (x \in A-B) \lor (x \in B-A)\}$ |
+| Complement | $\overline{A}$ | $\{x : x \notin A\}$ |
 
 ### Set Identities
+
+| Law | | |
+| --- | --- | --- |
+| Double Complement | $\overline{\overline{A}} = A$ | |
+| Complement | $\overline{U} = \empty$ | $\overline{\empty} = U$ |
+
+| Law | $\cup$ Identities | $\cap$ Identities |
+| --- | ----------------- | ----------------- |
+| Idempotent | $A \cup A = A$ | $A \cap A = A$ |
+| Identity | $A \cup \empty = A$ | $A \cap U = A$ |
+| Domination | $A \cup U = U$ | $A \cap \empty = \empty$ |
+| Complement (cont.) | $A \cup \overline{A} = U$ | $A \cap \overline{A} = \empty$ |
+| Commutative | $A \cup B = B \cup A$ | $A \cap B = B \cap A$ |
+| Associative | $A \cup (B \cup C) = (A \cup B) \cup C$ | $A \cap (B \cap C) = (A \cap B) \cap C$ |
+| Distributive | $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ | $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ |
+| De Morgan's | $\overline{A \cup B} = \overline{A} \cap \overline{B}$ | $\overline{A \cap B} = \overline{A} \cup \overline{B}$ |
+| Absorption | $A \cup (A \cap B) = A$ | $A \cap (A \cup B) = A$ |
+
+| Set Subtraction Identities |
+| --- |
+| $A - B = A \cap \overline{B}$ |
+| $A - \empty = A$ |
+| $A - A = \empty$ |
+| $\empty - A = \empty$ |
+| $U - A = \overline{A}$ |
 
 ## Lecture 11
 Sections 3.5 - 3.7
