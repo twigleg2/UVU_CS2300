@@ -759,7 +759,7 @@ For example, if we are talking about set $B$ from above, the universal set would
 Since we know that $\mathbb{Z}$ contains elements that $B$ does not, we can use the **proper subset** symbol:
 - $B \subset \mathbb{Z}$
 
-What the difference beetwen these two symbols?
+What's the difference between these two symbols?
 - Subset $\subseteq$ : allows for the sets on either side to be exactly equal
 - Proper Subset $\subset$ : Does NOT allow for the two sets to be equal.  
 
@@ -774,10 +774,10 @@ It's important to note that elements in a set within a set are not automatically
 - $\{3, 2, 1\} \in A$
 
 #### Power sets
-A power set is a set of all subsets of a set, written $\mathcal{P}(B)$ [^powerset]  
+A power set is a set of all subsets of a set, written $\mathcal{P}(B)$ [^power_set]  
 If $B = \{1,2,3\}$, then $\mathcal{P}(B) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1,2\}, \{2,3\}, \{1,3\}, \{1,2,3\}\}$
 
-[^powerset]: Zybooks uses $P(A)$, which I don't like because it's the same as a predicate $P(x)$
+[^power_set]: Zybooks uses $P(A)$, which I don't like because it's the same as a predicate $P(x)$
 
 #### Cardinality of power sets
 If $|A| = n$, then $|\mathcal{P}(A)| = 2^n$
@@ -800,7 +800,7 @@ If $A$ and $B$ are sets:
 - Symmetric difference: $\oplus$
   - $A \oplus B$ : All the elements from both $A$ and $B$ with any elements found in both removed
   - This is commutative
-- Compliment: $\bar{A}$
+- Complement: $\bar{A}$
   - $\bar{A}$ : All of the elements from the universal set $U$, with hte elements from $A$ removed.
 
 #### Table of operators
