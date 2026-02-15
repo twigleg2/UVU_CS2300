@@ -801,7 +801,7 @@ If $A$ and $B$ are sets:
   - $A \oplus B$ : All the elements from both $A$ and $B$ with any elements found in both removed
   - This is commutative
 - Complement: $\bar{A}$
-  - $\bar{A}$ : All of the elements from the universal set $U$, with hte elements from $A$ removed.
+  - $\bar{A}$ : All of the elements from the universal set $U$, with the elements from $A$ removed.
 
 #### Table of operators
 
@@ -812,6 +812,10 @@ If $A$ and $B$ are sets:
 | Difference | $A-B$ | $\{x : (x \in A) \land (x \notin B)\}$ |
 | Symmetric Difference | $A \oplus B$ | $\{x : (x \in A-B) \lor (x \in B-A)\}$ |
 | Complement | $\overline{A}$ | $\{x : x \notin A\}$ |
+
+
+## Lecture 11
+Sections 3.5 - 3.7
 
 ### Set Identities
 
@@ -840,13 +844,112 @@ If $A$ and $B$ are sets:
 | $\empty - A = \empty$ |
 | $U - A = \overline{A}$ |
 
-## Lecture 11
-Sections 3.5 - 3.7
+### Cartesian Product
+_Think about a cartesian plane, or (x,y) coordinate system._
+
+A set is defined using curly braces { }, which signifies that the order is not important.  
+An _ordered pair_, or  _tuple_ is denoted with parenthesis ( ), and the order DOES matter.
+$$(x,y) \neq (y,x)$$
+
+The _cartesian product_ of $A$ and $B$ is the set of all ordered pairs where the first entry in the pair is from $A$ and the second entry in the pair is from $B$  
+$$A \times B = \{(a,b) : (a \in A) \land (b \in B)\}$$
+Since the order is significant:
+$$A \times B \neq B \times A$$
+The cardinality of a cartesian product:
+$$|A \times B| = |A| \cdot |B|$$
+A set can be a cartesian product with itself, denoted with a superscript:
+$$A \times A = A^2$$
+
+These ordered pairings are not limited to just two entries, but can have any number of entries. A cartesian product of three or more sets would result in an _ordered triple_ or _n-tuple_. ex: $(x,y,z)$, $(a,b,c,d)$, etc.  
+
+#### Examples of cartesian products
+
+$$A = \{1,2,3\},\ B = \{x,y\},\ C = \{👍\}$$  
+
+$$
+\begin{aligned}
+A \times B &= \{(1,x), (1,y), (2,x), (2,y), (3,x), (3,y)\} \\
+A \times C &= \{(1, 👍),\ (2, 👍), (3, 👍)\} \\
+A \times B \times C &= \{(1,x,👍), (1,y,👍), (2,x,👍), (2,y,👍), (3,x,👍), (3,y,👍)\} \\
+C^2 &= \{(👍,👍)\} \\
+\end{aligned}
+$$
+
+### Strings
+Sometimes we write n-tuples without the parentheses or commas.  When we do this, we call it a **string**.  ex: $(x,y) = xy$  
+- **alphabet** : All characters that might appear in a string (that is to say, all characters in the set).  
+- **binary string** : is made of the alphabet $\{0,1\}$.  
+- **empty String** : has length zero, and is given the special symbol $\lambda$.  
+- **concatenation** : Concatenate strings by putting them together as one string.  
+  - Ex: if $t = 01$ and $s = 11$, then $st = 1101$
+
+### Partitions
+- **Disjoint** : Two sets $A$ and $B$ are disjoint if $A \cap B = \empty$
+- **Pairwise Disjoint** : A series of sets (usually more than two) in which every pair is disjoint.
+- **Partition** : Create a partition of $A$ by dividing it into two or more subsets, and assigning _each_ element of $A$ to _exactly one_ subset.
 
 
 ## Lecture 12
 Sections 4.1 - 4.3
 
+### Functions
+
+A function $f$ relates elements from one set, $X$, to elements of another set, $Y$.  This relation is directional, and is called mapping. Each element in $X$ must be mapped to exactly one element in $Y$, otherwise the function is _not well defined_.  
+$X$ is called the _domain_, $Y$ is called the _target_ or _co-domain_.  
+An element from $Y$ is considered to be in the _range_ of $f$ if there is an element from $X$ which maps to it.
+
+Function Notation:
+- $f(x) = y$  
+- $f : X\to Y$  
+
+Functions can be defined using an arrow diagram for small domains.  
+See an example of an arrow diagram, Zybooks 4.1.  
+
+#### Floor and Ceiling Functions
+These functions map Real numbers $\mathbb{R}$ onto integers $\mathbb{Z}$
+
+##### Floor
+Also knows as _round down_ or _round toward -$\infty$_.  
+The floor function produces the largest integer $y$ such that $y \leq x$.  
+
+$$\lfloor x \rfloor = n \text{, where } (n \in \mathbb{Z}) \land (n \leq x < n+1)$$
+
+##### Ceiling
+Also known as _round up_ or _round toward $\infty$_.  
+The ceiling function produces the smallest integer $y$ such that $x \leq y$.  
+
+$$\lceil x \rceil = n \text{, where } (n \in \mathbb{Z}) \land (n-1 < x \leq n)$$
+
+##### Truncate[^truncate]
+Also known as _round toward 0_.  
+Truncate simply drops the fractional part of a number.
+
+$$
+\operatorname{trunc}(x) =
+\begin{cases}
+\lfloor x \rfloor & \text{if } x \ge 0 \\
+\lceil x \rceil & \text{if } x < 0
+\end{cases}
+$$
+
+[^truncate]: Truncate is not used in Zybooks, but I want you to realize how it differs from the floor and ceiling functions
+
+#### Properties of Functions
+- **one-to-one**  (injective):
+  - $x_1 \neq x_2 \to f(x_1) \neq f(x_2)$, or
+  - every element in $X$ maps to a different element in $Y$, or
+  - no two elements in $X$ map to the same element in $Y$
+  - if $f: D \to T$, then $|D| \leq |T|$
+- **onto**  (surjective):
+  - The range of $f$ is equal to the target $Y$, or
+  - For Every $y \in Y$, there is an $x \in X$
+  - if $f: D \to T$, then $|D| \geq |T|$
+- **bijection** (bijective):
+  - Both injective and surjective
+  - if $f: D \to T$, then $|D| = |T|$
+
+Practice:  
+What are some functions that would satisfy each of the properties above?  graph them.
 
 ## Lecture 13
 Sections 4.4 - 4.6
