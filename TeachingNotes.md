@@ -951,9 +951,40 @@ $$
 Practice:  
 What are some functions that would satisfy each of the properties above?  graph them.
 
+
 ## Lecture 13
 Sections 4.4 - 4.6
 
+### Inverse of a function
+The inverse of a function can be obtained by swapping the $x$ and $y$ in the output _iff_ the function is a bijection.
+$$f^{-1} = \{(y,x) : (x,y) \in f\}$$
+
+If a function is not a bijection, then it does not have a well-defined inverse.
+
+### Composition of Functions
+Applying a function to the result of another function is called composition.  In other words, using the output of one function as input to another function.  
+Written two ways:
+
+- $g \circ f$
+- $g(f(x))$
+
+Composition is NOT commutative:
+
+$$g \circ f \neq f \circ g$$
+
+However, composition is associative:
+
+$$f \circ (g \circ h) = (f \circ g) \circ h$$
+
+### Identity Function
+The identity function $I$ maps a set onto itself:
+
+$$I_A : A \to A,\ I_A(a) = a$$
+
+If a function is a bijection, then composition can be used to create the identity function:
+
+$$\text{if } f(a) = b \text{, then } f^{-1}(b) = a \text{, so } \\
+f^{-1}(f(a)) = a$$
 
 ## Lecture 14
 Sections 5.1 - 5.3
