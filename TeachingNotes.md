@@ -864,7 +864,9 @@ These ordered pairings are not limited to just two entries, but can have any num
 
 #### Examples of cartesian products
 
-$$A = \{1,2,3\},\ B = \{x,y\},\ C = \{👍\}$$  
+$$
+A = \{1,2,3\},\ B = \{x,y\},\ C = \{👍\}
+$$  
 
 $$
 \begin{aligned}
@@ -905,11 +907,28 @@ Function Notation:
 Functions can be defined using an arrow diagram for small domains.  
 See an example of an arrow diagram, Zybooks 4.1.  
 
+#### Properties of Functions
+- **one-to-one**  (injective):
+  - $x_1 \neq x_2 \to f(x_1) \neq f(x_2)$, or
+  - every element in $X$ maps to a different element in $Y$, or
+  - no two elements in $X$ map to the same element in $Y$
+  - if $f: D \to T$, then $|D| \leq |T|$
+- **onto**  (surjective):
+  - The range of $f$ is equal to the target $Y$, or
+  - For Every $y \in Y$, there is an $x \in X$
+  - if $f: D \to T$, then $|D| \geq |T|$
+- **bijection** (bijective):
+  - Both injective and surjective
+  - if $f: D \to T$, then $|D| = |T|$
+
+Practice:  
+What are some functions that would satisfy each of the properties above?  graph them.
+
 #### Floor and Ceiling Functions
 These functions map Real numbers $\mathbb{R}$ onto integers $\mathbb{Z}$
 
 ##### Floor
-Also knows as _round down_ or _round toward -$\infty$_.  
+Also known as _round down_ or _round toward -$\infty$_.  
 The floor function produces the largest integer $y$ such that $y \leq x$.  
 
 $$\lfloor x \rfloor = n \text{, where } (n \in \mathbb{Z}) \land (n \leq x < n+1)$$
@@ -933,24 +952,6 @@ $$
 $$
 
 [^truncate]: Truncate is not used in Zybooks, but I want you to realize how it differs from the floor and ceiling functions
-
-#### Properties of Functions
-- **one-to-one**  (injective):
-  - $x_1 \neq x_2 \to f(x_1) \neq f(x_2)$, or
-  - every element in $X$ maps to a different element in $Y$, or
-  - no two elements in $X$ map to the same element in $Y$
-  - if $f: D \to T$, then $|D| \leq |T|$
-- **onto**  (surjective):
-  - The range of $f$ is equal to the target $Y$, or
-  - For Every $y \in Y$, there is an $x \in X$
-  - if $f: D \to T$, then $|D| \geq |T|$
-- **bijection** (bijective):
-  - Both injective and surjective
-  - if $f: D \to T$, then $|D| = |T|$
-
-Practice:  
-What are some functions that would satisfy each of the properties above?  graph them.
-
 
 ## Lecture 13
 Sections 4.4 - 4.6
