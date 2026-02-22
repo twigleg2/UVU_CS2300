@@ -91,10 +91,11 @@ $$
 
 
 #### Related statements
+- Original: $p \to q$
 - Inverse: $\neg p \to \neg q$
 - Converse: $q \to p$
 - Contrapositive: $\neg q \to \neg p$
-  - The _Contrapositive_ is logically equivalent to the original conditional statement.  The _Inverse_ and _Converse_ are not, but they are logically equivalent to each other.
+  - The _Contrapositive_ is logically equivalent to the original conditional statement.  The _Inverse_ and _Converse_ are not, but they are logically equivalent to each other (one is the contrapositive of the other).
 
 
 ### Biconditional statement
@@ -309,9 +310,9 @@ Examples:
 If a statement (conjunction or disjunction) does not contain a variable bound by a quantifier, it can be pulled into or out of that quantifier
 
 Examples:
-- $\forall x (\exists y Q(y)\land P(x)) \equiv \forall x \exists y (P(x) \land Q(y))$
+- $\forall x (\exists y Q(y)\land P(x)) \equiv \forall x \exists y (Q(y) \land P(x))$
 
-This can also be done with the implication $\to$, but be careful you do it correctly!  Convert it to the form $\neg p \lor q$ using the conditional identify first to make sure you don't make a mistake.  For most, this is very unintuitive and easy to mess up.
+This can also be done with the implication $\to$, but be careful you do it correctly!  Convert it to the form $\neg p \lor q$ using the conditional identify first to make sure you don't make a mistake.  Doing it without conversion first is very unintuitive and easy to mess up.
 
 ## Lecture 6
 Sections 2.1 - 2.3
@@ -957,10 +958,13 @@ $$
 Sections 4.4 - 4.6
 
 ### Inverse of a function
-The inverse of a function can be obtained by swapping the $x$ and $y$ in the output _iff_ the function is a bijection.
+The inverse of a function can be obtained by swapping the $x$ and $y$ in the output _iff_ the function is a bijection.[^inverse]
+
 $$f^{-1} = \{(y,x) : (x,y) \in f\}$$
 
-If a function is not a bijection, then it does not have a well-defined inverse.
+If a function is not a bijection, then it does not have a well-defined inverse.  
+
+[^inverse]: If two functions are inverses of each other, then their graphs are a reflection of the other over the line x = y.
 
 ### Composition of Functions
 Applying a function to the result of another function is called composition.  In other words, using the output of one function as input to another function.  
@@ -986,6 +990,49 @@ If a function is a bijection, then composition can be used to create the identit
 
 $$\text{if } f(a) = b \text{, then } f^{-1}(b) = a \text{, so } \\
 f^{-1}(f(a)) = a$$
+
+### Exponents and Logarithms
+####  Properties of Exponents
+
+$$
+\begin{aligned}
+b^xb^y &= b^{x+y} \\
+\frac{b^x}{b^y} &= b^{x-y} \\
+(b^x)^y &= b^{xy} \\
+(bc)^x &= b^xc^x \\
+\end{aligned}
+$$
+
+#### Properties of Logarithms
+
+$$
+\begin{aligned}
+\log_b(xy) & = \log_b(x) + \log_b(y) \\
+\log_b\left(\frac{x}{y}\right) &=  \log_b(x) - \log_b(y) \\
+\log_b(x^y) &= y\log_b(x) \\
+log_c(x) &= \frac{\log_b(x)}{\log_b(c)} \text{, where } c \neq 1 \\
+\end{aligned}
+$$
+
+#### Notes about exponents and logarithms
+- $\ln(x) = \log_e(x)$
+  - Called the "natural logarithm"
+  - $e \approx 2.71828$
+- Exponents and logarithms are inverses of each other
+- $b^x = y \leftrightarrow \log_b(y) = x$
+  - $2^3 = 8 \leftrightarrow \log_2(8) = 3$
+
+### Divide and conquer
+It is a common strategy in computer science to divide a problem set into two sets, solve each set independently, and then combine the results.  Some examples:
+- sorting/searching
+  - lists
+  - binary tree
+- factorial
+- many others
+
+The number of times you can "divide and conquer" a set is determined by the logarithm of its size:
+- A set of size $n$, divided into $b$ equal size groups each time, can be divided $\log_b(n)$ times, assuming it divides evenly.
+- If the set does not divide evenly, then the number of times the larger resulting group(s) can be divided is $\lceil \log_b(n) \rceil$ , and for the smaller resulting group(s),  $\lfloor \log_b(n) \rfloor$ .
 
 ## Lecture 14
 Sections 5.1 - 5.3
