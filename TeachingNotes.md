@@ -1078,6 +1078,41 @@ We can use arrow diagrams to show relations, similar to the way we use them to d
   - These tend to look more chaotic than arrow diagrams of $A \times B$ relations
 
 ### Properties of Binary Relations
+Assume $R \subseteq A \times A$
+
+#### Reflexive
+The relation $R$ is reflexive iff every element in $A$ relates to itself:  
+
+$$\forall x \in A, \ xRx$$
+
+#### Irreflexive (Anti-reflexive)
+The relation is irreflexive iff no element in $A$ relates to itself:
+
+$$\forall x \in A, \ \neg(xRx)$$
+
+#### Symmetric
+The relation is symmetric iff every related pair in $A$ can be reversed:
+
+$$\forall x,y \in A, xRy \to yRx$$
+
+NOTE: If there are no related pairs then the relation is symmetric.
+
+#### Anti-symmetric
+The relation is anti-symmetric iff every related pair is related in only one direction.
+
+$$\forall x,y \in A, (xRy \land yRx) \to x = y \\
+\text{or} \\
+\forall x,y \in A, x \neq y \to (xRy \oplus yRx) \\
+$$
+
+#### Transitive
+A relation is transitive if $x$ relates to $y$ and $y$ relates to $z$, then $x$ also relates to $z$ for all $x,y,z$
+
+$$\forall x,y,z \in A, (xRy \land yRz) \to xRz$$
+
+#### Proving and Disproving Relations
+
+Since these properties are universal statements, they can be disproven with a single counter example, but they can only be proven by showing the property holds for all elements in the domain.
 
 ## Lecture 15
 Sections 5.4 - 5.6
