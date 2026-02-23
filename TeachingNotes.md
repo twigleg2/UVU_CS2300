@@ -1037,6 +1037,47 @@ The number of times you can "divide and conquer" a set is determined by the loga
 ## Lecture 14
 Sections 5.1 - 5.3
 
+### Binary Relations
+
+$R$ is a **binary relation**, and $R \subseteq A \times B$. Only the pairs that satisfy a given condition are included in the relation.  For example:
+
+$$R \{(a,b) | b = 2a\} \\
+\text{or} \\
+aRb \text{ if } b = 2a
+$$
+
+
+### Binary Relation Representations
+
+#### matrix representation
+A matrix can be used to show which elements relate to each other, by listing the elements of $A$ as rows, and the elements of $B$ as columns, then placing a 1 or 0 in the cell to indicate that the relation is satisfied or not, respectively.
+
+
+
+$$
+A = \{1,2,3\},\ B = \{4,5,6,7\},\ aRb \text{ if } b = 2a \\
+\ \\
+\begin{array}{c|ccc}
+
+\ & 4 & 5 & 6 & 7 \\
+\hline
+1 & 0 & 0 & 0 & 0 \\
+2 & 1 & 0 & 0 & 0 \\
+3 & 0 & 0 & 1 & 0 \\
+
+\end{array}
+$$
+
+#### arrow diagrams
+We can use arrow diagrams to show relations, similar to the way we use them to define functions on small domains.  Some notable differences include:
+- $A \times B$:
+  - Not every element in $A$ will necessarily have an arrow originating from it, because some elements in $A$ might not satisfy the condition of the relation
+  - Some elements in $A$ might have two or more arrows originating from them, if those elements satisfy the condition of the relation with more than one element in $B$.
+- $A \times A$
+  - If $A$ relates to itself, then we only list the elements of $A$ once, and draw arrows between them.  
+  - These tend to look more chaotic than arrow diagrams of $A \times B$ relations
+
+### Properties of Binary Relations
 
 ## Lecture 15
 Sections 5.4 - 5.6
