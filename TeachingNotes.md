@@ -1114,6 +1114,35 @@ $$\forall x,y,z \in A, (xRy \land yRz) \to xRz$$
 
 Since these properties are universal statements, they can be disproven with a single counter example, but they can only be proven by showing the property holds for all elements in the domain.
 
+#### Directed Graphs (Digraph)
+
+  Digraphs are created from a set of verticies $V$ and a set of directed edges $E$, where $E \subseteq V \times V$.  
+  The first element, $u$, of the edge $(u,v) \in E$ is the "tail", and the second, $v$, is the "head".  
+  A vertex has an **in-degree** -- the number of edges popinting toward it -- and an **out degree** -- the number of edges originating from it.
+
+This should feel very familiar, because it is!  $E \subseteq V \times V$, the definition of a digraph,  is a relation.  This means, of course, that we can draw a digraph using an arrow diagram, or represent it with a matrix.
+
+Practice: what are some real-world applications of digraphs? Now think of some less obvious ones.
+
+#### Walks
+
+A walk in a digraph is a collection of verticies and the edges that connect them, in order, from start to finish.
+
+$$\langle v_0, (v_0,v_1), v_1...v_{l-1}, (v_{l-1}, v_l), v_l \rangle$$
+
+Because the edges can be deduces, they are usually left out:
+
+$$\langle v_0, v_1...v_{l-1}, v_l \rangle$$
+
+The **length of a walk** is equal to the number of edges, or the number of verticies - 1  
+An **open walk** is a walk in which the first and last verticies are _not_ the same.  
+A **closed walk** is a walk in which the first and last verticies are the same.  
+A **trail** is a walk in which no edge occurs more than once.
+A **Path** is an _open walk_ in which no vertex occurs more than once.  
+A **Circuit** is a closed trail.  
+A **cycle** is a circuit of length at least 1, in which no vertex occurs more than once (except the first and last).
+
+
 ## Lecture 15
 Sections 5.4 - 5.6
 
