@@ -1086,19 +1086,19 @@ The relation $R$ is reflexive iff every element in $A$ relates to itself:
 $$\forall x \in A, \ xRx$$
 
 #### Irreflexive (Anti-reflexive)
-The relation is irreflexive iff no element in $A$ relates to itself:
+The relation $R$ is irreflexive iff no element in $A$ relates to itself:
 
 $$\forall x \in A, \ \neg(xRx)$$
 
 #### Symmetric
-The relation is symmetric iff every related pair in $A$ can be reversed:
+The relation $R$ is symmetric iff every related pair in $A$ can be reversed:
 
 $$\forall x,y \in A, xRy \to yRx$$
 
 NOTE: If there are no related pairs then the relation is symmetric.
 
 #### Anti-symmetric
-The relation is anti-symmetric iff every related pair is related in only one direction.
+The relation $R$ is anti-symmetric iff every related pair is related in only one direction.
 
 $$\forall x,y \in A, (xRy \land yRx) \to x = y \\
 \text{or} \\
@@ -1106,7 +1106,7 @@ $$\forall x,y \in A, (xRy \land yRx) \to x = y \\
 $$
 
 #### Transitive
-A relation is transitive if $x$ relates to $y$ and $y$ relates to $z$, then $x$ also relates to $z$ for all $x,y,z$
+A relation $R$ is transitive if $x$ relates to $y$ and $y$ relates to $z$, then $x$ also relates to $z$ for all $x,y,z$
 
 $$\forall x,y,z \in A, (xRy \land yRz) \to xRz$$
 
@@ -1137,7 +1137,7 @@ $$\langle v_0, v_1...v_{l-1}, v_l \rangle$$
 The **length of a walk** is equal to the number of edges, or the number of verticies - 1  
 An **open walk** is a walk in which the first and last verticies are _not_ the same.  
 A **closed walk** is a walk in which the first and last verticies are the same.  
-A **trail** is a walk in which no edge occurs more than once.
+A **trail** is a walk in which no edge occurs more than once.  
 A **Path** is an _open walk_ in which no vertex occurs more than once.  
 A **Circuit** is a closed trail.  
 A **cycle** is a circuit of length at least 1, in which no vertex occurs more than once (except the first and last).
@@ -1146,6 +1146,46 @@ A **cycle** is a circuit of length at least 1, in which no vertex occurs more th
 ## Lecture 15
 Sections 5.4 - 5.6
 
+### Composition of Relations
+Similar to composing functions, we can compose relations.  
+Assume we want to compose $R$ with $S$.  We can denote that with the composition notation that we are already familiar with, $S \circ R$.[^composition_order]  This composition of relations will result in a pair, where $a$ comes from $R$ and $c$ comes from $S$
+
+$$(a,c) \in S \circ R \iff \exists b\big((a,b) \in R \land (b,c) \in S\big)$$
+
+[^composition_order]: Remember that composition notation applies the right most first, then moves leftward.  So in the example $S \circ R$, Apply $R$ first, then apply $S$ second.  
+
+When drawing the digraph, or arrow diagram, of the composed relation $S \circ R$, it helps to first draw the digraph of the relation $R$ and $S$ separately, then use those to help build the final digraph.  If you do this, you will end up with three total digraphs (Unless the composed relation is with a set and itself, in which case you can just use two).
+
+### Graph Powers
+A relation can be composed with itself any number of times.  We use the power notation to show this:[^power_notation_recursion]  
+[^power_notation_recursion]: This notation is recursive, so $R^3 = R \circ R^2 = R \circ R \circ R$
+
+$$
+\begin{aligned}
+R^{1} &= R \\
+R^{k} &= R \circ R^{k-1}\text{, where } k \ge 2
+\end{aligned}
+$$
+
+The power $R^k$ represents all walks of length $k$ that exist in $R$.
+
+#### Graph power Theorem
+Let $G$ be a directed graph.  Let $u$ and $v$ be any two vertices in G.  There is an edge from $u$ to $v$ in $G^k$ if an only if there is a walk of length $k$ from $u$ to $v$ in $G$
+
+Draw some example graphs if you need to visualize this theorem.  It's actually pretty intuitive once you are able to see what it's describing.
+
+### Transitive Closure
+Let $G$ be a digraph with vertex set $V$:[^graph]
+[^graph]: Remember that a digraph is a relation, and a relation is a set of ordered pairs, and those ordered pairs are obtained by taking the cartesian product of two sets.  In this case, $V \times V$
+
+$G^+$ is the **transitive closure** of $G$.  It's obtained by adding just enough edges to $G$ to make it transitive.  
+
+$$G^+ = G^1 \cup G^2 \cup G^3 \cup ... \cup G^{|V|-1}$$
+In other words, $G^+$ contains all ordered pairs $(u,v)$ where $v$ is reachable from $u$ through a walk of positive length.  
+
+$|V|-1$ is the highest power needed because a simple path cannot be longer than that (it would repeat vertices).
+
+### Matrix Multiplication
 
 ## Lecture 16
 Sections 5.7 - 5.9
