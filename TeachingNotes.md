@@ -1052,8 +1052,6 @@ $$
 #### matrix representation
 A matrix can be used to show which elements relate to each other, by listing the elements of $A$ as rows, and the elements of $B$ as columns, then placing a 1 or 0 in the cell to indicate that the relation is satisfied or not, respectively.
 
-
-
 $$
 A = \{1,2,3\},\ B = \{4,5,6,7\},\ aRb \text{ if } b = 2a \\
 \ \\
@@ -1185,7 +1183,15 @@ In other words, $G^+$ contains all ordered pairs $(u,v)$ where $v$ is reachable 
 
 $|V|-1$ is the highest power needed because a simple path cannot be longer than that (it would repeat vertices).
 
-### Matrix Multiplication
+### Matrix Operations
+We can represent a graph in a matrix.  Suppose graph $G \subseteq A \times B$.  The size of that matrix is $m \times n$, where $m$ is the number of elements in $A$ and $n$ is the number of elements in $B$.
+
+We can use **boolean matrix multiplication** to compose to graphs together.  $S \circ R = M_R \times M_S$.  
+Boolean multiplication is the same thing as logical AND
+
+We can use **boolean matrix addition** to union two graph together. $S \cup R = M_S + M_R$.  
+Boolean Addition is the same thing as logical OR.
+
 
 ## Lecture 16
 Sections 5.7 - 5.9
