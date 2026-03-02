@@ -1132,9 +1132,9 @@ Because the edges can be deduces, they are usually left out:
 
 $$\langle v_0, v_1...v_{l-1}, v_l \rangle$$
 
-The **length of a walk** is equal to the number of edges, or the number of verticies - 1  
-An **open walk** is a walk in which the first and last verticies are _not_ the same.  
-A **closed walk** is a walk in which the first and last verticies are the same.  
+The **length of a walk** is equal to the number of edges, or the number of vertices - 1  
+An **open walk** is a walk in which the first and last vertices are _not_ the same.  
+A **closed walk** is a walk in which the first and last vertices are the same.  
 A **trail** is a walk in which no edge occurs more than once.  
 A **Path** is an _open walk_ in which no vertex occurs more than once.  
 A **Circuit** is a closed trail.  
@@ -1196,6 +1196,54 @@ Boolean Addition is the same thing as logical OR.
 ## Lecture 16
 Sections 5.7 - 5.9
 
+### Partial Order
+
+A relation $R$ is a **partial order** if it is transitive, reflexive, and anti-symmetric.  Why do we care about this property?  It allows us to assign each element in the set an order _relative_ to other elements.  Or in other words, they allow us to assign a hierarchy to the elements.  This is not a _total order_ because it's possible to have more than one element on the same "level" of the hierarchy.  
+In the example below, $c$ and $b$ both come before $d$, but neither $c$ nor $b$ comes before the other, making this a partial order and not a _total order_.
+
+```text
+^   d
+|  / \
+| c   b
+|  \ / 
+|   a   
+
+This is an example of an "upward drawing" or "Hasse diagram"
+```
+
+$a \preceq b$ : $a$ is at most $b$  
+
+This symbol shows that the two are _comparable_, and the direction of the relation.  Not all elements are comparable.  In the example above, $b$ and $c$ are not related, and are therefore _incomparable_.  
+And element is **minimal** if it's at the bottom of the hierarchy, and **maximal** if it's at the top. There could be more than one of each.
+
+### Strict Order
+
+A strict order is transitive and anti-reflexive.[^strict_order]  
+A strict order is to $<$ as a partial order is to $\leq$  
+
+[^strict_order]: All relations that are transitive and anti-reflexive are guaranteed to be anti-symmetric.
+
+$a \prec b$ : $a$ precedes $b$  
+
+A strict order is a total order if every distinct pair of elements is comparable.
+
+### Directed Acyclic Graphs
+
+Or, DAG for short, are closely related to strict order.  It's a digraph with no cycles.  All strict orders produce a DAG, but not all DAGs produce a strict order.  Why?
+
+#### Topological sort
+
+A topological sort is an ordering of vertices in a DAG that follows the order established by the edges in the graph.  There is often more than one valid topological sort.  One way to create a valid topological sort is to pick a vertex with in-degree $0$, add it to the list of sorted vertices, and then remove that vertex and all of it's edges from the graph.  Repeat until no vertices remain.
+
+### Equivalence Relations
+A relation that is reflexive, symmetric, and transitive.
+
+$a \sim b$ : $a$ is equivalent to $b$
+
+An equivalence relation can be used to define a partition for a set.
+
+#### equivalence class
+a set $[x]$ is called an **equivalence class**, and contains all $x \sim y$ for the domain.  
 
 ## Lecture 17
 Sections 6.1 - 6.5
