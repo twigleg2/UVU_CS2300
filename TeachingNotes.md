@@ -1124,11 +1124,11 @@ Practice: what are some real-world applications of digraphs? Now think of some l
 
 #### Walks
 
-A walk in a digraph is a collection of verticies and the edges that connect them, in order, from start to finish.
+A walk in a digraph is a collection of vertices and the edges that connect them, in order, from start to finish.
 
 $$\langle v_0, (v_0,v_1), v_1...v_{l-1}, (v_{l-1}, v_l), v_l \rangle$$
 
-Because the edges can be deduces, they are usually left out:
+Because the edges can be deduced, they are usually left out:
 
 $$\langle v_0, v_1...v_{l-1}, v_l \rangle$$
 
@@ -1248,6 +1248,94 @@ a set $[x]$ is called an **equivalence class**, and contains all $x \sim y$ for 
 ## Lecture 17
 Sections 6.1 - 6.5
 
+### Undirected graphs
+Undirected (simple) graphs are assumed to have no parallel edges and no self loops.
+
+Undirected graph edges are denoted with curly braces {x,y} to show that the order does not matter.
+
+#### Vocabulary
+
+- Two vertices are **adjacent** if they have an edge between them
+  - Those two vertices are **endpoints** of that edge
+  - That edge is **incident** to those two vertices  
+- The **neighbors** of a vertex are all vertices adjacent to it
+- **degree**: the number of neighbors a vertex has
+  - Also,  the number of incident edges
+- **total degree**: the total number of neighbors for each vertex  
+- **regular graph**: all vertices in the graph have the same degree
+- **subgraph**: a graph that has vertices and edges that are subsets of the original graph's vertices and edges.
+
+#### The Handshake theorem
+the total degree of a graph is equal to twice the number of edges
+
+### Graph Representations
+Drawing graphs is useful for us, but useless for computer programs.  Instead, we can provide a graph to a program in other ways that the program can process.  
+
+**Adjacency list**:  
+A list of vertices which each points to a list of the vertices adjacent to it.
+
+| vertex | neighbors |
+| --- | --- |
+| x | y, z |
+| y | z |
+| z | x |
+
+**Matrix representation**:  
+Note that in an undirected graph, the matrix is symmetrical.
+
+```text
+  x y z
+x 0 1 1
+y 1 0 0
+z 1 0 0
+```
+
+### Graph Isomorphism
+
+Two graphs are isomorphic if there is a bijection (function) between the two graphs such that for each pair of vertices, $u \sim v \leftrightarrow f(u) \sim f(v)$.  
+In other words, if the vertices of one graph can be relabeled so that the two graphs have the same edges.
+
+#### Properties preserved under isomorphism
+Showing that two graphs are isomorphic is easy, but showing that two graphs are not isomorphic can be harder.  Here are some properties that must hold if two graphs are isomorphic.
+
+- number of vertices
+- number of edges
+- degree of each vertex
+- total degree
+- degree sequence
+  - The degree of each vertex, listed in descending order
+
+### Walks (undirected)
+
+A walk in a graph is a collection of vertices and the edges that connect them, in order, from start to finish.
+
+$$\langle v_0, \{v_0,v_1\}, v_1...v_{l-1}, \{v_{l-1}, v_l\}, v_l \rangle$$
+
+Because the edges can be deduced, they are usually left out:
+
+$$\langle v_0, v_1...v_{l-1}, v_l \rangle$$
+
+The **length of a walk** is equal to the number of edges, or the number of vertices - 1  
+An **open walk** is a walk in which the first and last vertices are _not_ the same.  
+A **closed walk** is a walk in which the first and last vertices are the same.  
+A **trail** is a walk in which no edge occurs more than once.  
+A **Path** is a walk in which no vertex occurs more than once.  
+A **Circuit** is a closed trail.  
+A **cycle** is a circuit of length at least 3, in which no vertex occurs more than once (except the first and last).
+
+### Connectivity
+Two vertices are connected if there is a path between them.  If all vertices are connected, then the the graph is connected (otherwise the graph is disconnected).  
+If the graph is disconnected, then it is made up of two or more connected components and/or isolated vertices.
+
+#### k-vertex-connectivity
+If a graph is still connected after removing $k-1$ vertices (any vertices), then the graph is k-vertex-connected  
+(the graph must have at least $k+1$ vertices to start)
+
+#### k-edge-connectivity
+If a graph is still connected after removing $k-1$ edges (any edges), then it is k-edge-connected
+
+#### showing connectivity
+A graph cannot have vertex- or edge-connectivity greater than its minimum vertex degree
 
 ## Lecture 18
 Sections 7.1 - 7.5
