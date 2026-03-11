@@ -1340,6 +1340,52 @@ A graph cannot have vertex- or edge-connectivity greater than its minimum vertex
 ## Lecture 18
 Sections 7.1 - 7.5
 
+### Trees
+a tree is an undirected graph that is connected and has no cycles.  A tree can be rooted (organized) or free (not organized).  A free tree can be easily turned into a rooted tree by picking one vertex to be the root, and organizing it from there.
+
+#### Tree Terminology
+- The **level** of a vertex is it's distance from the root (the root has a level of zero).  
+- The **height** of a tree is the highest level found in the tree.
+- A tree has a **unique path** between any two vertices.
+- A **parent** to vertex $v$ is the vertex one level higher, along the same path from the root.  it has a height one less than the height of $v$.
+  - Each vertex has a parent, except for the root.  
+- A **child** of vertex $v$ is adjacent to $v$ and has a height one greater than the height of $v$.
+- Two vertices are **siblings** if the have the same parent.
+- An **ancestor** of vertex $v$ is any vertex along the path from the root to $v$ (except for $v$ itself)
+- A **descendant** of vertex $v$ is any vertex along the path from $v$ to any leaf (except for $v$ itself)
+- A **leaf** is a vertex with no children.
+- A **subtree** is any vertex in the tree and all of its descendants.
+
+#### Tree Examples
+- file systems
+- browser DOM
+- decisions made moves in a game
+  - chess, tic-tac-toe, etc.
+
+### Binary trees
+In a binary tree, each vertex (node) can have only two children.  Because of this property, the path through a binary tree can be represented as a binary string, where $0$ represents a step down the left branch, and $1$ means a step down the right branch.
+
+Binary trees are very common in computer science.  
+
+### Properties of trees
+- There is a unique path between any two vertices in a tree.
+- A leaf has a degree of 1
+- A path that includes n vertices has n-1 edges
+
+### Tree Traversal
+
+#### Breadth-first
+A breadth-first tree traversal visits and processes each node on the same level of the tree before moving on to the next level.  
+
+#### Depth-first
+A depth-first tree traversal visits nodes all the way down to a leaf before backtracking and taking another branch down to another leaf.  The nodes can be processed the before their descendants (**pre-order**) or after their descendants (**post-order**).
+
+### Spanning Tree
+A spanning tree of a connected graph $G$ is a subgraph that contains all the vertices in $G$ and is a tree.  In other words, remove edges from $G$ until it's a tree.  
+
+There is often more than one spanning tree for a connected graph.
+
+A spanning tree can be created using breath-first or depth-first search.
 
 ## Lecture 19
 Midterm 2 Review
